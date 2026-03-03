@@ -173,11 +173,21 @@
   })();
   </script>
 
-  <main class="flex-grow pt-24 pb-16">
+  <main class="flex-grow pt-6 pb-16">
+  <!-- ══ PAGE HERO ══ -->
+  <div class="pt-6 pb-10 text-center bg-gradient-to-b from-gray-100 dark:from-gray-900/60 to-transparent">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-5xl mb-4">🔬</div>
+      <h1 data-i18n="research.title" class="text-4xl md:text-5xl font-bold mb-3">Forschung</h1>
+      <p data-i18n="research.subtitle_hero" class="text-lg text-gray-500 dark:text-gray-400">NLP · Low-Resource-Sprachen · Maschinelle Übersetzung</p>
+      <div class="mt-6 w-16 h-1 bg-primary mx-auto rounded-full"></div>
+    </div>
+  </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 data-i18n="research.title" class="text-5xl md:text-6xl font-bold text-center mb-16">Forschungsschwerpunkte</h1>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="reveal-stagger grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
           <div class="text-5xl mb-4">🧬</div>
           <h3 data-i18n="research.machine_translation" class="text-2xl font-bold text-primary mb-4">Machine Translation</h3>
@@ -202,9 +212,54 @@
     </div>
   </main>
 
-  <footer class="bg-gray-950 text-gray-400 py-10">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p data-i18n="footer.copyright">© 2026 Raman Ahmad – Alle Rechte vorbehalten.</p>
+    <footer class="bg-gray-950 text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Top row -->
+      <div class="flex flex-col md:flex-row justify-between items-start gap-10 mb-10">
+
+        <!-- Brand -->
+        <div class="reveal-stagger space-y-3">
+          <div class="text-3xl font-bold text-primary">RA</div>
+          <p class="text-sm max-w-xs text-gray-500">Fullstack Developer &amp; NLP Enthusiast · Hamburg</p>
+        </div>
+
+        <!-- Nav links -->
+        <div class="reveal-stagger grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-2 text-sm">
+          <a href="index.html"         data-i18n="nav.home"         class="hover:text-primary transition">Startseite</a>
+          <a href="ueber-mich.html"    data-i18n="nav.about"        class="hover:text-primary transition">Über mich</a>
+          <a href="forschung.html"     data-i18n="nav.research"     class="hover:text-primary transition">Forschung</a>
+          <a href="publikationen.html" data-i18n="nav.publications" class="hover:text-primary transition">Publikationen</a>
+          <a href="projekte.html"      data-i18n="nav.projects"     class="hover:text-primary transition">Projekte</a>
+          <a href="interviews.html"    data-i18n="nav.interviews"   class="hover:text-primary transition">Interviews</a>
+          <a href="cv.html"            data-i18n="nav.cv"           class="hover:text-primary transition">CV</a>
+          <a href="kontakt.html"       data-i18n="nav.contact"      class="hover:text-primary transition">Kontakt</a>
+        </div>
+
+        <!-- Social icons -->
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/RamanAhmad" target="_blank" rel="noopener" aria-label="GitHub"
+             class="w-9 h-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.32.76-1.62-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.53.12-3.19 0 0 1.01-.32 3.31 1.23.96-.27 1.98-.4 3-.41 1.02.01 2.04.14 3 .41 2.3-1.55 3.31-1.23 3.31-1.23.66 1.66.24 2.89.12 3.19.77.84 1.24 1.92 1.24 3.24 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/raman-ahmad-5243ab30b/" target="_blank" rel="noopener" aria-label="LinkedIn"
+             class="w-9 h-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.029-3.058-1.867-3.058-1.867 0-2.152 1.459-2.152 2.966v5.696h-3v-11h2.882v1.509h.039c.401-.757 1.381-1.557 2.837-1.557 3.033 0 3.597 1.997 3.597 4.597v6.451z"/></svg>
+          </a>
+          <a href="https://orcid.org/0009-0001-8012-3945" target="_blank" rel="noopener" aria-label="ORCID"
+             class="w-9 h-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/c/Kurd%C3%AEBiH%C3%AAsan%C3%AE" target="_blank" rel="noopener" aria-label="YouTube"
+             class="w-9 h-9 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.276 1.105-1.08 1.97-2.186 2.246C18.72 20 12 20 12 20s-6.72 0-8.357-.252c-1.106-.276-1.91-1.141-2.186-2.246C2 15.72 2 12 2 12s0-3.72.457-5.502c.276-1.105 1.08-1.97 2.186-2.246C5.28 4 12 4 12 4s6.72 0 8.357.252c1.106.276 1.91 1.141 2.186 2.246zM10 15.5l6-3.5-6-3.5v7z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-800 pt-6 text-center text-sm">
+        <p data-i18n="footer.copyright">© 2026 Raman Ahmad – Alle Rechte vorbehalten.</p>
+      </div>
     </div>
   </footer>
 
@@ -249,5 +304,111 @@
     };
   </script>
   <script src="js/i18n.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d6bfa4c09f562eb',t:'MTc3MjU3NTg5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d6bfa4c09f562eb',t:'MTc3MjU3NTg5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+  <!-- ══ SCROLL ANIMATIONS ══ -->
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* stagger children */
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal-stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay: 0s; }
+    .reveal-stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:.1s; }
+    .reveal-stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:.2s; }
+    .reveal-stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:.3s; }
+    .reveal-stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:.4s; }
+    .reveal-stagger.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:.5s; }
+    .reveal-stagger.visible > *:nth-child(n+7) { opacity:1; transform:none; transition-delay:.6s; }
+
+    /* ── Back to top ── */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 99;
+      width: 44px;
+      height: 44px;
+      background: #22c55e;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(34,197,94,.45);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .3s, transform .3s;
+      pointer-events: none;
+    }
+    #back-to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #back-to-top:hover { background: #16a34a; }
+  </style>
+
+  <!-- ══ BACK TO TOP BUTTON ══ -->
+  <button id="back-to-top" aria-label="Nach oben scrollen">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script>
+  // ── Scroll animations ──────────────────────────────────────────────
+  (function() {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el) {
+      io.observe(el);
+    });
+  })();
+
+  // ── Back to top ────────────────────────────────────────────────────
+  (function() {
+    var btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) btn.classList.add('show');
+      else btn.classList.remove('show');
+    });
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // ── Active nav link ────────────────────────────────────────────────
+  (function() {
+    var page = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a[href], #mobile-sidebar a[href]').forEach(function(a) {
+      if (a.getAttribute('href') === page) {
+        a.classList.add('text-primary', 'font-semibold');
+        // add a subtle underline indicator on desktop
+        a.style.borderBottom = '2px solid #22c55e';
+        a.style.paddingBottom = '2px';
+      }
+    });
+  })();
+  </script>
+
+</body>
 </html>
