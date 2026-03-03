@@ -1,5 +1,3 @@
-Und was muss ich hier anpassen:
-
 // js/i18n.js
 (function () {
 
