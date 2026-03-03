@@ -27,10 +27,13 @@
 
 <body class="bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
 
+  <!-- Angepasste Navigation mit Mobile-Menü -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="text-3xl font-bold text-primary">RA</div>
+
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8 font-medium">
           <a href="index.html"         data-i18n="nav.home"         class="hover:text-primary">Startseite</a>
           <a href="ueber-mich.html"    data-i18n="nav.about"        class="hover:text-primary">Über mich</a>
@@ -41,20 +44,45 @@
           <a href="cv.html"            data-i18n="nav.cv"           class="hover:text-primary">CV</a>
           <a href="kontakt.html"       data-i18n="nav.contact"      class="hover:text-primary">Kontakt</a>
         </div>
-        <select id="language-select" class="ml-6 px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-sm">
-          <option value="de">Deutsch</option>
-          <option value="en">English</option>
-          <option value="ku">Kurmanjî</option>
-          <option value="ckb">سۆرانی</option>
-        </select>
-        <button id="theme-toggle" class="ml-4 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-          <svg id="sun" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-          </svg>
-          <svg id="moon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-          </svg>
-        </button>
+
+        <!-- Language + Theme + Hamburger -->
+        <div class="flex items-center">
+          <select id="language-select" class="ml-4 px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-sm">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+            <option value="ku">Kurmanjî</option>
+            <option value="ckb">سۆرانی</option>
+          </select>
+
+          <button id="theme-toggle" class="ml-4 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+            <svg id="sun" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <svg id="moon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+
+          <button id="menu-toggle" class="md:hidden ml-4 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="hamburger-icon">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobiles Menü -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col space-y-5 text-center font-medium">
+        <a href="index.html"         data-i18n="nav.home"         class="py-2 hover:text-primary">Startseite</a>
+        <a href="ueber-mich.html"    data-i18n="nav.about"        class="py-2 hover:text-primary">Über mich</a>
+        <a href="forschung.html"     data-i18n="nav.research"     class="py-2 hover:text-primary">Forschung</a>
+        <a href="publikationen.html" data-i18n="nav.publications" class="py-2 hover:text-primary">Publikationen</a>
+        <a href="projekte.html"      data-i18n="nav.projects"     class="py-2 hover:text-primary">Projekte</a>
+        <a href="interviews.html"    data-i18n="nav.interviews"   class="py-2 hover:text-primary">Interviews</a>
+        <a href="cv.html"            data-i18n="nav.cv"           class="py-2 hover:text-primary">CV</a>
+        <a href="kontakt.html"       data-i18n="nav.contact"      class="py-2 hover:text-primary">Kontakt</a>
       </div>
     </div>
   </nav>
@@ -75,7 +103,7 @@
           <p data-i18n="research.kurdish_linguistics_text">Forschung zur Phonologie, Morphologie und Dialektologie des Kurdischen (z.B. Kobani-Variante, ICKL-6 Konferenz).</p>
         </div>
         <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
-          <div class="text-5xl mb-4">🧠</div>
+          <div class="text-5xl mb-4">🤖</div>
           <h3 data-i18n="research.low_resource_nlp" class="text-2xl font-bold text-primary mb-4">Low-Resource NLP</h3>
           <p data-i18n="research.low_resource_nlp_text">Entwicklung von NLP-Technologien für Sprachen mit begrenzten Ressourcen, inkl. Korpus-Aufbau.</p>
         </div>
@@ -135,5 +163,33 @@
     };
   </script>
   <script src="js/i18n.js"></script>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+
+      if (menuToggle && mobileMenu && hamburgerIcon) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          if (!mobileMenu.classList.contains('hidden')) {
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+          } else {
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+          }
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+          }
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
