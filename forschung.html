@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raman Ahmad – Forschung</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#22c55e' } } }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', system-ui, sans-serif; }</style>
+
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-3xl font-bold text-primary">RA</div>
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a href="index.html"         data-i18n="nav.home"         class="hover:text-primary">Startseite</a>
+          <a href="ueber-mich.html"    data-i18n="nav.about"        class="hover:text-primary">Über mich</a>
+          <a href="forschung.html"     data-i18n="nav.research"     class="hover:text-primary">Forschung</a>
+          <a href="publikationen.html" data-i18n="nav.publications" class="hover:text-primary">Publikationen</a>
+          <a href="projekte.html"      data-i18n="nav.projects"     class="hover:text-primary">Projekte</a>
+          <a href="interviews.html"    data-i18n="nav.interviews"   class="hover:text-primary">Interviews</a>
+          <a href="cv.html"            data-i18n="nav.cv"           class="hover:text-primary">CV</a>
+          <a href="kontakt.html"       data-i18n="nav.contact"      class="hover:text-primary">Kontakt</a>
+        </div>
+        <select id="language-select" class="ml-6 px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-sm">
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="ku">Kurmanjî</option>
+          <option value="ckb">سۆرانی</option>
+        </select>
+        <button id="theme-toggle" class="ml-4 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+          <svg id="sun" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg id="moon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 data-i18n="research.title" class="text-5xl md:text-6xl font-bold text-center mb-16">Forschungsschwerpunkte</h1>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+          <div class="text-5xl mb-4">🧬</div>
+          <h3 data-i18n="research.machine_translation" class="text-2xl font-bold text-primary mb-4">Machine Translation</h3>
+          <p data-i18n="research.machine_translation_text">Hybrider Ansatz für maschinelle Übersetzung von Low-Resource-Sprachen, Fokus auf Kobani-Variante des Kurmanji (Bachelor-Thesis).</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+          <div class="text-5xl mb-4">📚</div>
+          <h3 data-i18n="research.kurdish_linguistics" class="text-2xl font-bold text-primary mb-4">Kurdish Linguistics</h3>
+          <p data-i18n="research.kurdish_linguistics_text">Forschung zur Phonologie, Morphologie und Dialektologie des Kurdischen (z.B. Kobani-Variante, ICKL-6 Konferenz).</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+          <div class="text-5xl mb-4">🧠</div>
+          <h3 data-i18n="research.low_resource_nlp" class="text-2xl font-bold text-primary mb-4">Low-Resource NLP</h3>
+          <p data-i18n="research.low_resource_nlp_text">Entwicklung von NLP-Technologien für Sprachen mit begrenzten Ressourcen, inkl. Korpus-Aufbau.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+          <div class="text-5xl mb-4">💻</div>
+          <h3 data-i18n="research.fullstack_in_research" class="text-2xl font-bold text-primary mb-4">Fullstack Development in Forschung</h3>
+          <p data-i18n="research.fullstack_in_research_text">Integration von Dev-Tools (React, Spring Boot) in NLP-Projekte für praktische Anwendungen.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-950 text-gray-400 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p data-i18n="footer.copyright">© 2026 Raman Ahmad – Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      de: {
+        'nav.home':'Startseite','nav.about':'Über mich','nav.research':'Forschung','nav.publications':'Publikationen','nav.projects':'Projekte','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Kontakt',
+        'research.title':'Forschungsschwerpunkte',
+        'research.machine_translation':'Machine Translation','research.machine_translation_text':'Hybrider Ansatz für maschinelle Übersetzung von Low-Resource-Sprachen, Fokus auf Kobani-Variante des Kurmanji (Bachelor-Thesis).',
+        'research.kurdish_linguistics':'Kurdish Linguistics','research.kurdish_linguistics_text':'Forschung zur Phonologie, Morphologie und Dialektologie des Kurdischen (z.B. Kobani-Variante, ICKL-6 Konferenz).',
+        'research.low_resource_nlp':'Low-Resource NLP','research.low_resource_nlp_text':'Entwicklung von NLP-Technologien für Sprachen mit begrenzten Ressourcen, inkl. Korpus-Aufbau.',
+        'research.fullstack_in_research':'Fullstack Development in Forschung','research.fullstack_in_research_text':'Integration von Dev-Tools (React, Spring Boot) in NLP-Projekte für praktische Anwendungen.',
+        'footer.copyright':'© 2026 Raman Ahmad – Alle Rechte vorbehalten.',
+      },
+      en: {
+        'nav.home':'Home','nav.about':'About Me','nav.research':'Research','nav.publications':'Publications','nav.projects':'Projects','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Contact',
+        'research.title':'Research Focus Areas',
+        'research.machine_translation':'Machine Translation','research.machine_translation_text':'Hybrid approach for machine translation of low-resource languages, focus on Kobani variant of Kurmanji (Bachelor thesis).',
+        'research.kurdish_linguistics':'Kurdish Linguistics','research.kurdish_linguistics_text':'Research on phonology, morphology, and dialectology of Kurdish (e.g. Kobani variant, ICKL-6 conference).',
+        'research.low_resource_nlp':'Low-Resource NLP','research.low_resource_nlp_text':'Development of NLP technologies for languages with limited resources, including corpus building.',
+        'research.fullstack_in_research':'Fullstack Development in Research','research.fullstack_in_research_text':'Integration of dev tools (React, Spring Boot) into NLP projects for practical applications.',
+        'footer.copyright':'© 2026 Raman Ahmad – All rights reserved.',
+      },
+      ku: {
+        'nav.home':'Mal','nav.about':'Li ser min','nav.research':'Lêkolîn','nav.publications':'Weşan','nav.projects':'Projeler','nav.interviews':'Hevpeyivîn','nav.cv':'CV','nav.contact':'Têkilî',
+        'research.title':'Navendên Lêkolînê',
+        'research.machine_translation':'Wergera Makîneyê','research.machine_translation_text':'Nêzîkbûna hîbrîd ji bo wergera makîneyê ya zimanên kêm-sedayê, fokus li ser guhertoya Kobanî ya Kurmanjî (Teza Bachelor).',
+        'research.kurdish_linguistics':'Zimannasiya Kurdî','research.kurdish_linguistics_text':'Lêkolîn li ser fonolojî, morfolojî û dîalektolojî ya Kurdî (mînak guhertoya Kobanî, Konferansa ICKL-6).',
+        'research.low_resource_nlp':'NLP-ya Kêm-Sedayê','research.low_resource_nlp_text':'Pêşxistina teknolojiyên NLP ji bo zimanên bi çavkaniyên kêm, di nav de avakirina korpusê.',
+        'research.fullstack_in_research':'Pêşxistina Fullstack di Lêkolînê de','research.fullstack_in_research_text':'Yekkirina amûrên pêşxistinê (React, Spring Boot) di projeyên NLP de ji bo sepandinên pratîk.',
+        'footer.copyright':'© 2026 Raman Ahmad – Hemû Mafên Parastî ne.',
+      },
+      ckb: {
+        'nav.home':'ماڵ','nav.about':'دەربارەی من','nav.research':'توێژینەوە','nav.publications':'بڵاوکراوەکان','nav.projects':'پڕۆژەکان','nav.interviews':'چاوپێکەوتنەکان','nav.cv':'CV','nav.contact':'پەیوەندی',
+        'research.title':'ناوەندەکانی توێژینەوە',
+        'research.machine_translation':'وەرگێڕانی ماشین','research.machine_translation_text':'نزیکبوونەوەی هایبرید بۆ وەرگێڕانی ماشین بۆ زمانە کەم-سەرچاوەکان، فۆکەس لەسەر جۆری کۆبانی کورمانجی (تەزای بەکالۆریۆس).',
+        'research.kurdish_linguistics':'زمانەوانی کوردی','research.kurdish_linguistics_text':'توێژینەوە لەسەر فۆنۆلۆژی، مۆرفۆلۆژی و دیالێکتۆلۆژی کوردی (بۆ نموونە جۆری کۆبانی، کۆنفرانسی ICKL-6).',
+        'research.low_resource_nlp':'NLP کەم-سەرچاوە','research.low_resource_nlp_text':'پەرەپێدانی تەکنەلۆژیاکانی NLP بۆ زمانەکان کە سەرچاوەی کەمیان هەیە، لە نێویاندا بنیاتنانی کۆرپوس.',
+        'research.fullstack_in_research':'پەرەپێدانی Fullstack لە توێژینەوەدا','research.fullstack_in_research_text':'یەکخستنی ئامرازەکانی پەرەپێدان (React, Spring Boot) لە پرۆژەکانی NLP بۆ بەکارهێنانی پراکتیکی.',
+        'footer.copyright':'© ٢٠٢٦ رەمان ئەحمەد – هەموو مافەکان پارێزراون.',
+      }
+    };
+  </script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

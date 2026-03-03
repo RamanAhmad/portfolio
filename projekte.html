@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raman Ahmad – Projekte</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#22c55e' } } }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', system-ui, sans-serif; }</style>
+
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-3xl font-bold text-primary">RA</div>
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a href="index.html"         data-i18n="nav.home"         class="hover:text-primary">Startseite</a>
+          <a href="ueber-mich.html"    data-i18n="nav.about"        class="hover:text-primary">Über mich</a>
+          <a href="forschung.html"     data-i18n="nav.research"     class="hover:text-primary">Forschung</a>
+          <a href="publikationen.html" data-i18n="nav.publications" class="hover:text-primary">Publikationen</a>
+          <a href="projekte.html"      data-i18n="nav.projects"     class="hover:text-primary">Projekte</a>
+          <a href="interviews.html"    data-i18n="nav.interviews"   class="hover:text-primary">Interviews</a>
+          <a href="cv.html"            data-i18n="nav.cv"           class="hover:text-primary">CV</a>
+          <a href="kontakt.html"       data-i18n="nav.contact"      class="hover:text-primary">Kontakt</a>
+        </div>
+        <select id="language-select" class="ml-6 px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-sm">
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="ku">Kurmanjî</option>
+          <option value="ckb">سۆرانی</option>
+        </select>
+        <button id="theme-toggle" class="ml-4 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+          <svg id="sun" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg id="moon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 data-i18n="projects.title" class="text-5xl md:text-6xl font-bold text-center mb-8">Aktuelle &amp; abgeschlossene Projekte</h1>
+      <p data-i18n="projects.subtitle" class="text-center text-xl text-gray-600 dark:text-gray-400 mb-16">Überblick über meine Entwicklungs- und Forschungsprojekte.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col">
+          <div class="flex justify-between items-start mb-4">
+            <h3 data-i18n="projects.dps_title" class="text-2xl font-bold text-primary">Fullstack Entwicklung bei DPS</h3>
+            <span class="inline-block px-4 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium" data-i18n="projects.ongoing">Laufend</span>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.dps_period">DPS Engineering GmbH • 04/2021 – heute</p>
+          <p class="mb-6" data-i18n="projects.dps_desc">Entwicklung von Backend (Spring Boot) und Frontend (React), Tests, Migrationen, CI/CD.</p>
+          <div class="mt-auto">
+            <p class="font-medium mb-2" data-i18n="projects.achievements">Erfolge:</p>
+            <ul class="list-disc pl-5 text-sm space-y-1 text-gray-700 dark:text-gray-300">
+              <li data-i18n="projects.dps_ach1">Automatisierte Tests mit Selenium</li>
+              <li data-i18n="projects.dps_ach2">Optimierung von Prozessen</li>
+              <li data-i18n="projects.dps_ach3">KI-Tools (Copilot, ChatGPT)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col">
+          <div class="flex justify-between items-start mb-4">
+            <h3 data-i18n="projects.thesis_title" class="text-2xl font-bold text-primary">Bachelor-Thesis: Maschinelle Übersetzung</h3>
+            <span class="inline-block px-4 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium" data-i18n="projects.ongoing">Laufend</span>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.thesis_period">HAW Hamburg • 2021 – 2026</p>
+          <p class="mb-6" data-i18n="projects.thesis_desc">Hybrider Ansatz für Übersetzung der Kobani-Variante des Kurmanji (Low-Resource NLP).</p>
+          <div class="mt-auto">
+            <p class="font-medium mb-2" data-i18n="projects.achievements">Erfolge:</p>
+            <ul class="list-disc pl-5 text-sm space-y-1 text-gray-700 dark:text-gray-300">
+              <li data-i18n="projects.thesis_ach1">Korpus-Aufbau</li>
+              <li data-i18n="projects.thesis_ach2">ML-Methoden</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col">
+          <div class="flex justify-between items-start mb-4">
+            <h3 data-i18n="projects.ickl_title" class="text-2xl font-bold text-primary">Dialect Mapping &amp; Kobani Analysis</h3>
+            <span class="inline-block px-4 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium" data-i18n="projects.completed">Abgeschlossen</span>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.ickl_period">Independent Research • 2023</p>
+          <p class="mb-6" data-i18n="projects.ickl_desc">Kartierung kurdischer Dialekte und Analyse des Kobani-Dialekts (präsentiert bei ICKL-6).</p>
+          <div class="mt-auto">
+            <p class="font-medium mb-2" data-i18n="projects.achievements">Erfolge:</p>
+            <ul class="list-disc pl-5 text-sm space-y-1 text-gray-700 dark:text-gray-300">
+              <li data-i18n="projects.ickl_ach1">Konferenz-Poster</li>
+              <li data-i18n="projects.ickl_ach2">Zusammenarbeit mit C. Schuler</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-950 text-gray-400 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p data-i18n="footer.copyright">© 2026 Raman Ahmad – Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      de: {
+        'nav.home':'Startseite','nav.about':'Über mich','nav.research':'Forschung','nav.publications':'Publikationen','nav.projects':'Projekte','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Kontakt',
+        'projects.title':'Aktuelle & abgeschlossene Projekte','projects.subtitle':'Überblick über meine Entwicklungs- und Forschungsprojekte.',
+        'projects.ongoing':'Laufend','projects.completed':'Abgeschlossen','projects.achievements':'Erfolge:',
+        'projects.dps_title':'Fullstack Entwicklung bei DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – heute','projects.dps_desc':'Entwicklung von Backend (Spring Boot) und Frontend (React), Tests, Migrationen, CI/CD.',
+        'projects.dps_ach1':'Automatisierte Tests mit Selenium','projects.dps_ach2':'Optimierung von Prozessen','projects.dps_ach3':'KI-Tools (Copilot, ChatGPT)',
+        'projects.thesis_title':'Bachelor-Thesis: Maschinelle Übersetzung','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Hybrider Ansatz für Übersetzung der Kobani-Variante des Kurmanji (Low-Resource NLP).',
+        'projects.thesis_ach1':'Korpus-Aufbau','projects.thesis_ach2':'ML-Methoden',
+        'projects.ickl_title':'Dialect Mapping & Kobani Analysis','projects.ickl_period':'Independent Research • 2023','projects.ickl_desc':'Kartierung kurdischer Dialekte und Analyse des Kobani-Dialekts (präsentiert bei ICKL-6).',
+        'projects.ickl_ach1':'Konferenz-Poster','projects.ickl_ach2':'Zusammenarbeit mit C. Schuler',
+        'footer.copyright':'© 2026 Raman Ahmad – Alle Rechte vorbehalten.',
+      },
+      en: {
+        'nav.home':'Home','nav.about':'About Me','nav.research':'Research','nav.publications':'Publications','nav.projects':'Projects','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Contact',
+        'projects.title':'Current & Completed Projects','projects.subtitle':'Overview of my development and research projects.',
+        'projects.ongoing':'Ongoing','projects.completed':'Completed','projects.achievements':'Achievements:',
+        'projects.dps_title':'Fullstack Development at DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – present','projects.dps_desc':'Development of backend (Spring Boot) and frontend (React), testing, migrations, CI/CD.',
+        'projects.dps_ach1':'Automated tests with Selenium','projects.dps_ach2':'Process optimization','projects.dps_ach3':'AI tools (Copilot, ChatGPT)',
+        'projects.thesis_title':'Bachelor Thesis: Machine Translation','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Hybrid approach for translation of the Kobani variant of Kurmanji (Low-Resource NLP).',
+        'projects.thesis_ach1':'Corpus building','projects.thesis_ach2':'ML methods',
+        'projects.ickl_title':'Dialect Mapping & Kobani Analysis','projects.ickl_period':'Independent Research • 2023','projects.ickl_desc':'Mapping of Kurdish dialects and analysis of the Kobani dialect (presented at ICKL-6).',
+        'projects.ickl_ach1':'Conference posters','projects.ickl_ach2':'Collaboration with C. Schuler',
+        'footer.copyright':'© 2026 Raman Ahmad – All rights reserved.',
+      },
+      ku: {
+        'nav.home':'Mal','nav.about':'Li ser min','nav.research':'Lêkolîn','nav.publications':'Weşan','nav.projects':'Projeler','nav.interviews':'Hevpeyivîn','nav.cv':'CV','nav.contact':'Têkilî',
+        'projects.title':'Projeyên Niha & Qediyayî','projects.subtitle':'Nêrîna giştî li ser projeyên pêşxistin û lêkolînê yên min.',
+        'projects.ongoing':'Dewam dike','projects.completed':'Qediya','projects.achievements':'Destkeftî:',
+        'projects.dps_title':'Pêşxistina Fullstack li DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – îro','projects.dps_desc':'Pêşxistina backend (Spring Boot) û frontend (React), test, migrasyon, CI/CD.',
+        'projects.dps_ach1':'Testên otomatîk bi Selenium','projects.dps_ach2':'Optimîzasyona pêvajoyan','projects.dps_ach3':'Amûrên AI (Copilot, ChatGPT)',
+        'projects.thesis_title':'Teza Bachelor: Wergera Makîneyê','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Nêzîkbûna hîbrîd ji bo wergera guhertoya Kobanî ya Kurmanjî (NLP-ya kêm-sedayê).',
+        'projects.thesis_ach1':'Avakirina korpusê','projects.thesis_ach2':'Rêbazên ML',
+        'projects.ickl_title':'Nexşeya Dîalekt & Analîza Kobanî','projects.ickl_period':'Lêkolîna Serbixwe • 2023','projects.ickl_desc':'Nexşeya dîalektên Kurdî û analîza dîalektê Kobanî (pêşkêşkirin li ICKL-6).',
+        'projects.ickl_ach1':'Posterên konferansê','projects.ickl_ach2':'Hevkariya bi C. Schuler re',
+        'footer.copyright':'© 2026 Raman Ahmad – Hemû Mafên Parastî ne.',
+      },
+      ckb: {
+        'nav.home':'ماڵ','nav.about':'دەربارەی من','nav.research':'توێژینەوە','nav.publications':'بڵاوکراوەکان','nav.projects':'پڕۆژەکان','nav.interviews':'چاوپێکەوتنەکان','nav.cv':'CV','nav.contact':'پەیوەندی',
+        'projects.title':'پڕۆژەکانی ئێستا و تەواوکراوەکان','projects.subtitle':'چاوەڕوانی گشتی لە پڕۆژەکانی پەرەپێدان و توێژینەوەی من.',
+        'projects.ongoing':'بەردەوام','projects.completed':'تەواوکراو','projects.achievements':'دەستکەوتەکان:',
+        'projects.dps_title':'پەرەپێدانی Fullstack لە DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – ئێستا','projects.dps_desc':'پەرەپێدانی backend (Spring Boot) و frontend (React)، تاقیکردنەوە، گواستنەوە، CI/CD.',
+        'projects.dps_ach1':'تاقیکردنەوەی ئۆتۆماتیکی بە Selenium','projects.dps_ach2':'باشترکردنی پرۆسەکان','projects.dps_ach3':'ئامرازەکانی AI (Copilot, ChatGPT)',
+        'projects.thesis_title':'تەزای بەکالۆریۆس: وەرگێڕانی ماشین','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'نزیکبوونەوەی هایبرید بۆ وەرگێڕانی جۆری کۆبانی کورمانجی (NLP کەم-سەرچاوە).',
+        'projects.thesis_ach1':'بنیاتنانی کۆرپوس','projects.thesis_ach2':'ڕێگاکانی ML',
+        'projects.ickl_title':'نەخشەی دیالێکت & لێکۆڵینەوەی کۆبانی','projects.ickl_period':'لێکۆڵینەوەی سەربەخۆ • 2023','projects.ickl_desc':'نەخشەی دیالێکتەکانی کوردی و لێکۆڵینەوەی دیالێکتی کۆبانی (پێشکەشکراو لە ICKL-6).',
+        'projects.ickl_ach1':'پوستەرەکانی کۆنفرانس','projects.ickl_ach2':'هاوکاری لەگەڵ C. Schuler',
+        'footer.copyright':'© ٢٠٢٦ رەمان ئەحمەد – هەموو مافەکان پارێزراون.',
+      }
+    };
+  </script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

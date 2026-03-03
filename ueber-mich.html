@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raman Ahmad – Über mich</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#22c55e' } } }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', system-ui, sans-serif; }</style>
+
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="text-3xl font-bold text-primary">RA</div>
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a href="index.html"         data-i18n="nav.home"         class="hover:text-primary">Startseite</a>
+          <a href="ueber-mich.html"    data-i18n="nav.about"        class="hover:text-primary">Über mich</a>
+          <a href="forschung.html"     data-i18n="nav.research"     class="hover:text-primary">Forschung</a>
+          <a href="publikationen.html" data-i18n="nav.publications" class="hover:text-primary">Publikationen</a>
+          <a href="projekte.html"      data-i18n="nav.projects"     class="hover:text-primary">Projekte</a>
+          <a href="interviews.html"    data-i18n="nav.interviews"   class="hover:text-primary">Interviews</a>
+          <a href="cv.html"            data-i18n="nav.cv"           class="hover:text-primary">CV</a>
+          <a href="kontakt.html"       data-i18n="nav.contact"      class="hover:text-primary">Kontakt</a>
+        </div>
+        <select id="language-select" class="ml-6 px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-sm">
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="ku">Kurmanjî</option>
+          <option value="ckb">سۆرانی</option>
+        </select>
+        <button id="theme-toggle" class="ml-4 p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+          <svg id="sun" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg id="moon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section class="py-20 text-center">
+        <img src="assets/profile.jpg" alt="Raman Ahmad" class="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg">
+        <h1 data-i18n="about.title" class="text-5xl md:text-6xl font-bold mb-12">Über mich</h1>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+            <h3 data-i18n="about.fullstack" class="text-2xl font-bold text-primary mb-4">Fullstack Entwicklung</h3>
+            <p data-i18n="about.fullstack_text">Mehr als 4.5 Jahre Erfahrung in Frontend (React, TypeScript) und Backend (Spring Boot, Java).</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+            <h3 data-i18n="about.nlp" class="text-2xl font-bold text-primary mb-4">NLP &amp; Forschung</h3>
+            <p data-i18n="about.nlp_text">Fokus auf Low-Resource-Sprachen, maschinelle Übersetzung und kurdische Linguistik (Thesis &amp; Konferenzen).</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+            <h3 data-i18n="about.social" class="text-2xl font-bold text-primary mb-4">Soziales Engagement</h3>
+            <p data-i18n="about.social_text">Ehrenamtlich als Sprachmittler, Nachhilfelehrer und Multiplikator (AWO, Diakonie, BamF).</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+            <h3 data-i18n="about.languages" class="text-2xl font-bold text-primary mb-4">Sprachen &amp; Weiterbildung</h3>
+            <p data-i18n="about.languages_text">Deutsch C1, Englisch B2, Arabisch C2, Kurdisch Muttersprache. Zertifikate in Sprachkursen und Coaching.</p>
+          </div>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-2 gap-12 text-center">
+          <div>
+            <div class="text-6xl font-bold text-primary mb-4">4.5+</div>
+            <p data-i18n="about.experience_years" class="text-2xl">Jahre Berufserfahrung</p>
+          </div>
+          <div>
+            <div class="text-6xl font-bold text-primary mb-4">5+</div>
+            <p data-i18n="about.certificates" class="text-2xl">Weiterbildungen &amp; Zertifikate</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-gray-950 text-gray-400 py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p data-i18n="footer.copyright">© 2026 Raman Ahmad – Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      de: {
+        'nav.home':'Startseite','nav.about':'Über mich','nav.research':'Forschung','nav.publications':'Publikationen','nav.projects':'Projekte','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Kontakt',
+        'about.title':'Über mich',
+        'about.fullstack':'Fullstack Entwicklung','about.fullstack_text':'Mehr als 4.5 Jahre Erfahrung in Frontend (React, TypeScript) und Backend (Spring Boot, Java).',
+        'about.nlp':'NLP & Forschung','about.nlp_text':'Fokus auf Low-Resource-Sprachen, maschinelle Übersetzung und kurdische Linguistik (Thesis & Konferenzen).',
+        'about.social':'Soziales Engagement','about.social_text':'Ehrenamtlich als Sprachmittler, Nachhilfelehrer und Multiplikator (AWO, Diakonie, BamF).',
+        'about.languages':'Sprachen & Weiterbildung','about.languages_text':'Deutsch C1, Englisch B2, Arabisch C2, Kurdisch Muttersprache. Zertifikate in Sprachkursen und Coaching.',
+        'about.experience_years':'Jahre Berufserfahrung','about.certificates':'Weiterbildungen & Zertifikate',
+        'footer.copyright':'© 2026 Raman Ahmad – Alle Rechte vorbehalten.',
+      },
+      en: {
+        'nav.home':'Home','nav.about':'About Me','nav.research':'Research','nav.publications':'Publications','nav.projects':'Projects','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Contact',
+        'about.title':'About Me',
+        'about.fullstack':'Fullstack Development','about.fullstack_text':'More than 4.5 years of experience in Frontend (React, TypeScript) and Backend (Spring Boot, Java).',
+        'about.nlp':'NLP & Research','about.nlp_text':'Focus on low-resource languages, machine translation, and Kurdish linguistics (thesis & conferences).',
+        'about.social':'Social Engagement','about.social_text':'Volunteer work as language mediator, tutor, and multiplier (AWO, Diakonie, BamF).',
+        'about.languages':'Languages & Further Education','about.languages_text':'German C1, English B2, Arabic C2, Kurdish native. Certificates in language courses and coaching.',
+        'about.experience_years':'Years of Professional Experience','about.certificates':'Further Trainings & Certificates',
+        'footer.copyright':'© 2026 Raman Ahmad – All rights reserved.',
+      },
+      ku: {
+        'nav.home':'Mal','nav.about':'Li ser min','nav.research':'Lêkolîn','nav.publications':'Weşan','nav.projects':'Projeler','nav.interviews':'Hevpeyivîn','nav.cv':'CV','nav.contact':'Têkilî',
+        'about.title':'Li ser min',
+        'about.fullstack':'Pêşxistina Fullstack','about.fullstack_text':'Zêdetirî 4.5 sal ezmûna di Frontend (React, TypeScript) û Backend (Spring Boot, Java) de.',
+        'about.nlp':'NLP & Lêkolîn','about.nlp_text':'Fokus li ser zimanên kêm-sedayê, wergera makîneyê û zimannasiya kurdî (tez & konferans).',
+        'about.social':'Tevlêbûna Civakî','about.social_text':'Karê dilxwazî wekî werger, mamoste û pirziman (AWO, Diakonie, BamF).',
+        'about.languages':'Ziman & Perwerdeya Zêde','about.languages_text':'Almanî C1, Îngilîzî B2, Erebî C2, Kurdî zikmakî. Sertîfîkayên di qursên ziman û perwerdeyê de.',
+        'about.experience_years':'Salên Ezmûna Kar','about.certificates':'Perwerde û Sertîfîkayên Zêde',
+        'footer.copyright':'© 2026 Raman Ahmad – Hemû Mafên Parastî ne.',
+      },
+      ckb: {
+        'nav.home':'ماڵ','nav.about':'دەربارەی من','nav.research':'توێژینەوە','nav.publications':'بڵاوکراوەکان','nav.projects':'پڕۆژەکان','nav.interviews':'چاوپێکەوتنەکان','nav.cv':'CV','nav.contact':'پەیوەندی',
+        'about.title':'دەربارەی من',
+        'about.fullstack':'پەرەپێدانی Fullstack','about.fullstack_text':'زیاتر لە ٤.٥ ساڵ ئەزموونی پراکتیکی لە Frontend (React, TypeScript) و Backend (Spring Boot, Java).',
+        'about.nlp':'NLP & توێژینەوە','about.nlp_text':'فۆکەس لەسەر زمانە کەم-سەرچاوەکان، وەرگێڕانی ماشین و زمانەوانی کوردی (تەزا & کۆنفرانسەکان).',
+        'about.social':'تێکەڵبوونی کۆمەڵایەتی','about.social_text':'کارەکانی خۆبەخشین وەک وەرگێڕ، مامۆستا و چەندزمان (AWO, Diakonie, BamF).',
+        'about.languages':'زمانەکان & پەروەردەی زیاتر','about.languages_text':'ئەڵمانی C1، ئینگلیزی B2، عەرەبی C2، کوردی زگماک. بڕوانامە لە قورسەکانی زمان و ڕاهێنان.',
+        'about.experience_years':'ساڵەکانی ئەزموونی کار','about.certificates':'پەروەردە و بڕوانامەکانی زیاتر',
+        'footer.copyright':'© ٢٠٢٦ رەمان ئەحمەد – هەموو مافەکان پارێزراون.',
+      }
+    };
+  </script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>
