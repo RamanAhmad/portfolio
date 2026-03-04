@@ -2,113 +2,355 @@
 <html lang="de" class="scroll-smooth"><head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raman Ahmad – Curriculum Vitae</title>
+  <meta name="description" content="CV von Raman Ahmad – Fullstack Developer & NLP Researcher, HAW Hamburg."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{ink:'#0f0e0d',paper:'#f7f5f2',accent:'#2563eb',muted:'#64748b'},fontFamily:{display:['"DM Serif Display"','Georgia','serif']}}}}</script>
-  <style>*{box-sizing:border-box}body{font-family:'DM Sans',system-ui,sans-serif}h1,h2,h3{font-family:'DM Serif Display',Georgia,serif}body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4}.sr{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.sr.visible{opacity:1;transform:none}.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.card-hover{transition:transform .25s,box-shadow .25s,border-color .25s}.card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(37,99,235,.1);border-color:#2563eb!important}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#2563eb55;border-radius:99px}#btt{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:42px;height:42px;background:#0f0e0d;color:#fff;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}#btt.show{opacity:1;transform:none}#btt:hover{background:#2563eb}.dark #btt{background:#fff;color:#0f0e0d}.link-ul{position:relative}.link-ul::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:#2563eb;transition:width .3s}.link-ul:hover::after{width:100%}.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}</style>
+  <style>
+    *{box-sizing:border-box}body{font-family:'DM Sans',system-ui,sans-serif}h1,h2,h3{font-family:'DM Serif Display',Georgia,serif}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4}
+    .sr{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.sr.visible{opacity:1;transform:none}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+    .card-hover{transition:transform .25s,box-shadow .25s,border-color .25s}.card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(37,99,235,.1);border-color:#2563eb!important}
+    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#2563eb55;border-radius:99px}
+    #btt{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:42px;height:42px;background:#0f0e0d;color:#fff;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+    #btt.show{opacity:1;transform:none}#btt:hover{background:#2563eb}.dark #btt{background:#fff;color:#0f0e0d}
+    .link-ul{position:relative}.link-ul::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:#2563eb;transition:width .3s}.link-ul:hover::after{width:100%}
+    .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+
+    /* ── PRINT / PDF STYLES ── */
+    @media print {
+      /* Hide everything except the cv-print section */
+      body > *:not(#cv-print-area){ display:none!important }
+      #cv-print-area{ display:block!important; position:static!important }
+      body{ background:#fff!important; color:#000!important; font-size:11pt; font-family:'DM Sans',Arial,sans-serif }
+      body::before{ display:none }
+      h1,h2,h3{ font-family:'DM Serif Display',Georgia,serif }
+      .print-page{ padding:1.5cm 2cm; max-width:none!important }
+      .print-section{ margin-bottom:1.2cm }
+      .print-section h2{ font-size:13pt; color:#2563eb; border-bottom:1.5px solid #2563eb; padding-bottom:4px; margin-bottom:10px }
+      .print-entry{ margin-bottom:10px; page-break-inside:avoid }
+      .print-tag{ display:inline-block; background:#e0e7ff; color:#1e40af; border-radius:4px; padding:1px 6px; font-size:9pt; margin:2px }
+      a{ color:#2563eb!important; text-decoration:none }
+      @page{ size:A4; margin:0 }
+    }
+  </style>
   <script>if(localStorage.theme==='dark'||(!('theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}</script>
 </head>
 <body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen flex flex-col relative">
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"><div class="max-w-6xl mx-auto px-6 lg:px-8"><div class="flex justify-between items-center h-16">
-<a href="index.html" class="flex items-center gap-2.5 group"><div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-display text-sm font-bold group-hover:scale-105 transition-transform">RA</div><span class="font-display text-base hidden sm:block tracking-wide">Raman Ahmad</span></a>
-<div class="hidden md:flex items-center gap-7 text-sm font-medium text-muted"><a href="index.html" class="link-ul hover:text-ink dark:hover:text-paper transition-colors">Home</a><a href="ueber-mich.html" class="link-ul hover:text-ink dark:hover:text-paper transition-colors">Über mich</a><div class="relative group"><button class="link-ul flex items-center gap-1 hover:text-ink dark:hover:text-paper transition-colors">Akademisches<svg class="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden"><a href="forschung.html" class="flex px-4 py-3 text-sm hover:bg-accent/5 hover:text-accent transition-colors">Forschung</a><a href="publikationen.html" class="flex px-4 py-3 text-sm hover:bg-accent/5 hover:text-accent transition-colors">Publikationen</a><a href="projekte.html" class="flex px-4 py-3 text-sm hover:bg-accent/5 hover:text-accent transition-colors">Projekte</a><a href="interviews.html" class="flex px-4 py-3 text-sm hover:bg-accent/5 hover:text-accent transition-colors">Interviews</a></div></div><a href="cv.html" class="link-ul hover:text-ink dark:hover:text-paper transition-colors text-accent font-semibold">CV</a><a href="kontakt.html" class="link-ul hover:text-ink dark:hover:text-paper transition-colors">Kontakt</a></div>
-<div class="flex items-center gap-2"><button id="theme-toggle" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition-colors"><svg id="sun-icon" class="h-4 w-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg id="moon-icon" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></button><button id="menu-toggle" class="md:hidden w-8 h-8 flex items-center justify-center rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors"><svg id="ham-icon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg><svg id="x-icon" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
-</div></div></nav>
+
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8"><div class="flex justify-between items-center h-16">
+    <a href="index.html" class="flex items-center gap-2.5 group"><div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-display text-sm font-bold group-hover:scale-105 transition-transform">RA</div><span class="font-display text-base hidden sm:block tracking-wide">Raman Ahmad</span></a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+      <a href="index.html" class="link-ul hover:text-ink dark:hover:text-paper transition-colors" data-i18n="nav.home">Startseite</a>
+      <a href="ueber-mich.html" class="link-ul hover:text-ink dark:hover:text-paper transition-colors" data-i18n="nav.about">Über mich</a>
+      <div class="relative group"><button class="link-ul hover:text-ink dark:hover:text-paper transition-colors flex items-center gap-1" data-i18n="nav.academic">Akademisches<svg class="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden">
+          <a href="forschung.html" class="flex px-4 py-3 text-sm hover:bg-accent/5 hover:text-accent transition-colors" data-i18n="nav.research">Forschung</a>
+          <a href="publikationen.html" class="flex px-4 py-3 text-sm hover:bg-accent/5 hover:text-accent transition-colors" data-i18n="nav.publications">Publikationen</a>
+          <a href="projekte.html" class="flex px-4 py-3 text-sm hover:bg-accent/5 hover:text-accent transition-colors" data-i18n="nav.projects">Projekte</a>
+          <a href="interviews.html" class="flex px-4 py-3 text-sm hover:bg-accent/5 hover:text-accent transition-colors" data-i18n="nav.interviews">Interviews</a>
+        </div>
+      </div>
+      <a href="cv.html" class="link-ul text-accent font-semibold" data-i18n="nav.cv">CV</a>
+      <a href="kontakt.html" class="link-ul hover:text-ink dark:hover:text-paper transition-colors" data-i18n="nav.contact">Kontakt</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition-colors"><svg id="sun-icon" class="h-4 w-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg id="moon-icon" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></button>
+      <select class="lang-select text-xs px-2 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent focus:outline-none focus:border-accent cursor-pointer text-muted" aria-label="Sprache wählen">
+        <option value="de">DE</option><option value="en">EN</option><option value="ku">KU</option><option value="ckb">CKB</option>
+      </select>
+      <button id="menu-toggle" class="md:hidden w-8 h-8 flex items-center justify-center rounded-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors"><svg id="ham-icon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg><svg id="x-icon" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+  </div></div>
+</nav>
 <div id="mobile-backdrop" class="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm hidden"></div>
-<aside id="mobile-menu" class="fixed top-0 right-0 z-50 h-full w-72 bg-paper dark:bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"><div class="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-gray-800"><div class="flex items-center gap-2.5"><div class="w-7 h-7 rounded-md bg-accent flex items-center justify-center text-white font-display text-xs">RA</div><span class="font-display">Raman Ahmad</span></div><button id="menu-close" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-black/5 dark:hover:bg-white/10"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div><nav class="flex-1 overflow-y-auto px-4 py-6 space-y-1 text-sm font-medium"><a href="index.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted">Startseite</a><a href="ueber-mich.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted">Über mich</a><a href="forschung.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted">Forschung</a><a href="publikationen.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted">Publikationen</a><a href="projekte.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted">Projekte</a><a href="interviews.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted">Interviews</a><a href="cv.html" class="mob-link flex px-4 py-3 rounded-xl bg-accent/8 text-accent font-semibold">CV</a><a href="kontakt.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted">Kontakt</a></nav></aside>
+<aside id="mobile-menu" class="fixed top-0 right-0 z-50 h-full w-72 bg-paper dark:bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-gray-200 dark:border-gray-800"><div class="flex items-center gap-2.5"><div class="w-7 h-7 rounded-md bg-accent flex items-center justify-center text-white font-display text-xs">RA</div><span class="font-display">Raman Ahmad</span></div><button id="menu-close" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-black/5 dark:hover:bg-white/10"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+  <nav class="flex-1 overflow-y-auto px-4 py-6 space-y-1 text-sm font-medium">
+    <a href="index.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted" data-i18n="nav.home">Startseite</a>
+    <a href="ueber-mich.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted" data-i18n="nav.about">Über mich</a>
+    <a href="forschung.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted" data-i18n="nav.research">Forschung</a>
+    <a href="publikationen.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted" data-i18n="nav.publications">Publikationen</a>
+    <a href="projekte.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted" data-i18n="nav.projects">Projekte</a>
+    <a href="interviews.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted" data-i18n="nav.interviews">Interviews</a>
+    <a href="cv.html" class="mob-link flex px-4 py-3 rounded-xl bg-accent/8 text-accent font-semibold" data-i18n="nav.cv">CV</a>
+    <a href="kontakt.html" class="mob-link flex px-4 py-3 rounded-xl hover:bg-accent/8 hover:text-accent transition text-muted" data-i18n="nav.contact">Kontakt</a>
+    <div class="px-4 pt-4"><select class="lang-select w-full text-sm px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent focus:outline-none focus:border-accent cursor-pointer"><option value="de">Deutsch</option><option value="en">English</option><option value="ku">Kurmancî</option><option value="ckb">سۆرانی</option></select></div>
+  </nav>
+</aside>
+
 <main class="flex-grow pt-16 relative z-10">
+
+  <!-- HERO -->
   <section class="relative overflow-hidden py-24 border-b border-gray-200 dark:border-gray-800">
     <div class="orb w-[500px] h-[500px] bg-blue-400/15 top-[-100px] right-[-100px]"></div>
     <div class="max-w-6xl mx-auto px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="sr">
         <p class="text-xs font-medium text-accent uppercase tracking-widest mb-4">Werdegang</p>
-        <h1 class="text-5xl md:text-6xl leading-tight mb-6">Curriculum<br><em class="not-italic text-accent">Vitae</em></h1>
-        <p class="text-lg text-muted leading-relaxed mb-8">Akademischer und beruflicher Werdegang, technische Kenntnisse und persönliche Daten.</p>
-        <a href="#" onclick="window.print();return false;" class="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 px-5 py-2.5 rounded-xl text-sm font-medium hover:border-accent hover:text-accent transition-all">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-          CV drucken / herunterladen
-        </a>
+        <h1 class="text-5xl md:text-6xl leading-tight mb-6" data-i18n="cv.title">Curriculum<br><em class="not-italic text-accent">Vitae</em></h1>
+        <p class="text-lg text-muted leading-relaxed mb-8" data-i18n="cv.subtitle">Akademischer und beruflicher Werdegang.</p>
+        <!-- PDF DOWNLOAD BUTTON -->
+        <button onclick="printCV()" class="inline-flex items-center gap-2.5 bg-accent text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span data-i18n="cv.download">CV als PDF herunterladen</span>
+        </button>
       </div>
       <div class="sr d1 grid grid-cols-2 gap-4">
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 text-center"><div class="font-display text-4xl text-accent mb-2">4.5+</div><div class="text-xs text-muted">Jahre Berufserfahrung</div></div>
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 text-center"><div class="font-display text-4xl text-accent mb-2">6+</div><div class="text-xs text-muted">Tech-Kategorien</div></div>
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 text-center"><div class="font-display text-4xl text-accent mb-2">4</div><div class="text-xs text-muted">Sprachen</div></div>
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 text-center"><div class="font-display text-4xl text-accent mb-2">2</div><div class="text-xs text-muted">Konferenzposter</div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 text-center"><div class="font-display text-4xl text-accent mb-2">4.5+</div><div class="text-xs text-muted" data-i18n="about.experience_years">Jahre Berufserfahrung</div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 text-center"><div class="font-display text-4xl text-accent mb-2">6+</div><div class="text-xs text-muted" data-i18n="cv.skills">Tech-Kategorien</div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 text-center"><div class="font-display text-4xl text-accent mb-2">4</div><div class="text-xs text-muted" data-i18n="about.languages">Sprachen</div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 text-center"><div class="font-display text-4xl text-accent mb-2">2</div><div class="text-xs text-muted" data-i18n="projects.ickl_ach1">Konferenz-Poster</div></div>
       </div>
     </div></div>
   </section>
 
   <div class="max-w-6xl mx-auto px-6 lg:px-8 py-16 space-y-16">
 
-    <!-- Beruflich -->
+    <!-- BERUFLICH -->
     <section class="sr">
-      <div class="flex items-center gap-4 mb-8"><div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-xl">💼</div><h2 class="text-3xl text-accent">Beruflicher Werdegang</h2></div>
+      <div class="flex items-center gap-4 mb-8"><div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-xl">💼</div><h2 class="text-3xl text-accent" data-i18n="cv.professional">Beruflicher Werdegang</h2></div>
       <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-8">
         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
-          <div><h3 class="text-xl mb-1">Werkstudent – Fullstack Softwareentwicklung</h3><p class="text-muted text-sm">DPS Engineering GmbH · Hamburg</p></div>
+          <div><h3 class="text-xl mb-1" data-i18n="cv.dps_title">Werkstudent – Fullstack Softwareentwicklung</h3><p class="text-muted text-sm" data-i18n="cv.dps_company">DPS Engineering GmbH, Hamburg</p></div>
           <span class="text-xs text-muted font-medium px-3 py-1.5 bg-paper dark:bg-gray-800 rounded-lg whitespace-nowrap">04/2021 – heute</span>
         </div>
         <div class="space-y-2">
-          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Automatisierte Frontend-Tests mit Selenium</div>
-          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Entwicklung von Backend (Spring Boot) und Frontend (React)</div>
-          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unterstützung bei Datenbankmigrationen (Liquibase)</div>
-          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Optimierung von Entwicklungs- und Testprozessen</div>
-          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Einrichtung und Pflege von Testsystemen</div>
+          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span data-i18n="cv.dps_task1">Automatisierte Frontend-Tests</span></div>
+          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span data-i18n="cv.dps_task2">Entwicklung von Backend und Frontend</span></div>
+          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span data-i18n="cv.dps_task3">Unterstützung bei Datenbankmigrationen</span></div>
+          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span data-i18n="cv.dps_task4">Optimierung von Entwicklungs- und Testprozessen</span></div>
+          <div class="flex items-center gap-2 text-sm"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span data-i18n="cv.dps_task5">Einrichtung von Testsystemen</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Studium -->
+    <!-- STUDIUM -->
     <section class="sr">
-      <div class="flex items-center gap-4 mb-8"><div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-xl">🎓</div><h2 class="text-3xl text-accent">Studium</h2></div>
+      <div class="flex items-center gap-4 mb-8"><div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-xl">🎓</div><h2 class="text-3xl text-accent" data-i18n="cv.education">Studium</h2></div>
       <div class="space-y-5">
         <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-8">
           <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-            <div><h3 class="text-xl mb-1">B.Sc. Angewandte Informatik</h3><p class="text-muted text-sm">HAW Hamburg</p></div>
-            <span class="text-xs text-muted font-medium px-3 py-1.5 bg-paper dark:bg-gray-800 rounded-lg whitespace-nowrap">04/2021 – heute</span>
+            <div><h3 class="text-xl mb-1" data-i18n="cv.haw_title">B.Sc. Angewandte Informatik</h3><p class="text-muted text-sm" data-i18n="cv.haw_location">HAW Hamburg</p></div>
+            <span class="text-xs text-muted font-medium px-3 py-1.5 bg-paper dark:bg-gray-800 rounded-lg whitespace-nowrap" data-i18n="cv.haw_period">04/2021 – heute</span>
           </div>
-          <p class="text-sm text-muted leading-relaxed">Thesis: Maschinelle Übersetzung für Low-Resource-Sprachen: Ein hybrider Ansatz zur Übersetzung der Kobani-Variante des Kurmanji.</p>
+          <p class="text-sm text-muted leading-relaxed" data-i18n="cv.haw_thesis">Abschlussarbeit: Maschinelle Übersetzung für Low-Resource-Sprachen.</p>
         </div>
         <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl p-8">
           <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-            <div><h3 class="text-xl mb-1">Maschinenbau (nicht abgeschlossen)</h3><p class="text-muted text-sm">Universität Aleppo, Syrien</p></div>
-            <span class="text-xs text-muted font-medium px-3 py-1.5 bg-paper dark:bg-gray-800 rounded-lg whitespace-nowrap">09/2010 – 08/2011</span>
+            <div><h3 class="text-xl mb-1" data-i18n="cv.aleppo_title">Maschinenbau</h3><p class="text-muted text-sm" data-i18n="cv.aleppo_location">Universität Aleppo, Syrien</p></div>
+            <span class="text-xs text-muted font-medium px-3 py-1.5 bg-paper dark:bg-gray-800 rounded-lg whitespace-nowrap" data-i18n="cv.aleppo_period">09/2010 – 08/2011</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- SKILLS -->
     <section class="sr">
-      <div class="flex items-center gap-4 mb-8"><div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-xl">⚙️</div><h2 class="text-3xl text-accent">Software-Kenntnisse</h2></div>
+      <div class="flex items-center gap-4 mb-8"><div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-xl">⚙️</div><h2 class="text-3xl text-accent" data-i18n="cv.skills">Software-Kenntnisse</h2></div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted">Programmiersprachen</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">Java</span><span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">Python</span><span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">JavaScript</span><span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">C</span></div></div>
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted">Frontend</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">React</span><span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">TypeScript</span><span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">Vue.js</span><span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">HTML/CSS</span></div></div>
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted">Backend</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Spring Boot</span><span class="text-xs px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Quarkus</span><span class="text-xs px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Liquibase</span></div></div>
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted">Datenbanken</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 font-medium">PostgreSQL</span><span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 font-medium">MSSQL</span></div></div>
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted">DevOps & Tools</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Docker</span><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Jenkins</span><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Selenium</span><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Keycloak</span></div></div>
-        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted">Datenformate</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium">JSON</span><span class="text-xs px-2.5 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium">XML</span><span class="text-xs px-2.5 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium">YAML</span><span class="text-xs px-2.5 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium">XSD</span></div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted" data-i18n="cv.programming">Programmiersprachen</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">Java</span><span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">Python</span><span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">JavaScript</span><span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">C</span></div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted" data-i18n="cv.frontend">Frontend</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">React</span><span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">TypeScript</span><span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">Vue.js</span><span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium">HTML/CSS</span></div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted" data-i18n="cv.backend">Backend</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Spring Boot</span><span class="text-xs px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Quarkus</span><span class="text-xs px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Liquibase</span><span class="text-xs px-2.5 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">Spring Batch</span></div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted" data-i18n="cv.databases">Datenbanken</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 font-medium">PostgreSQL</span><span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 font-medium">MSSQL</span></div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted" data-i18n="cv.tools">Tools</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Docker</span><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Jenkins</span><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Selenium</span><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Keycloak</span><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">JMeter</span><span class="text-xs px-2.5 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">Postman</span></div></div>
+        <div class="card-hover bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-6"><h3 class="font-semibold mb-3 text-sm uppercase tracking-wide text-muted" data-i18n="cv.formats">Datenformate</h3><div class="flex flex-wrap gap-2"><span class="text-xs px-2.5 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium">JSON</span><span class="text-xs px-2.5 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium">XML</span><span class="text-xs px-2.5 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium">YAML</span><span class="text-xs px-2.5 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-medium">XSD</span></div></div>
       </div>
     </section>
   </div>
 
+  <!-- BOTTOM CTA -->
   <section class="py-12 border-t border-gray-200 dark:border-gray-800">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <p class="text-muted">Interesse an einer Zusammenarbeit?</p>
-      <a href="kontakt.html" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-accent/20">Kontakt aufnehmen <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+      <p class="text-muted" data-i18n="contact.subtitle">Interesse an einer Zusammenarbeit?</p>
+      <div class="flex gap-4">
+        <button onclick="printCV()" class="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 px-6 py-3 rounded-xl font-medium hover:border-accent hover:text-accent transition-all text-sm">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span data-i18n="cv.download">CV als PDF</span>
+        </button>
+        <a href="kontakt.html" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-accent/20" data-i18n="nav.contact">Kontakt</a>
+      </div>
     </div>
   </section>
 </main>
-<footer class="bg-ink text-paper/70 py-14"><div class="max-w-6xl mx-auto px-6 lg:px-8"><div class="flex flex-col md:flex-row justify-between items-start gap-10 mb-10"><div class="space-y-3"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-display text-sm">RA</div><span class="font-display text-paper text-base">Raman Ahmad</span></div><p class="text-xs text-paper/40 max-w-xs leading-relaxed">Fullstack Developer &amp; NLP Researcher<br>HAW Hamburg</p></div><div class="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-2 text-sm"><a href="index.html" class="hover:text-paper transition-colors">Startseite</a><a href="ueber-mich.html" class="hover:text-paper transition-colors">Über mich</a><a href="forschung.html" class="hover:text-paper transition-colors">Forschung</a><a href="publikationen.html" class="hover:text-paper transition-colors">Publikationen</a><a href="projekte.html" class="hover:text-paper transition-colors">Projekte</a><a href="interviews.html" class="hover:text-paper transition-colors">Interviews</a><a href="cv.html" class="hover:text-paper transition-colors">CV</a><a href="kontakt.html" class="hover:text-paper transition-colors">Kontakt</a></div><div class="flex items-center gap-3"><a href="https://github.com/RamanAhmad" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-white/8 hover:bg-accent flex items-center justify-center transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.32.76-1.62-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.53.12-3.19 0 0 1.01-.32 3.31 1.23.96-.27 1.98-.4 3-.41 1.02.01 2.04.14 3 .41 2.3-1.55 3.31-1.23 3.31-1.23.66 1.66.24 2.89.12 3.19.77.84 1.24 1.92 1.24 3.24 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="https://www.linkedin.com/in/raman-ahmad-5243ab30b/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-white/8 hover:bg-accent flex items-center justify-center transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.029-3.058-1.867-3.058-1.867 0-2.152 1.459-2.152 2.966v5.696h-3v-11h2.882v1.509h.039c.401-.757 1.381-1.557 2.837-1.557 3.033 0 3.597 1.997 3.597 4.597v6.451z"/></svg></a></div></div><div class="border-t border-white/10 pt-6 text-center text-xs text-paper/30">© 2026 Raman Ahmad — Alle Rechte vorbehalten.</div></div></footer>
+
+<!-- ══ HIDDEN PRINT AREA (A4 PDF layout) ══ -->
+<div id="cv-print-area" style="display:none">
+  <div class="print-page" style="font-family:'DM Sans',Arial,sans-serif;padding:1.5cm 2cm;max-width:21cm;margin:0 auto;color:#111">
+    <!-- Header -->
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1cm;border-bottom:2px solid #2563eb;padding-bottom:0.5cm">
+      <div>
+        <h1 style="font-family:'DM Serif Display',Georgia,serif;font-size:26pt;margin:0;color:#0f0e0d" id="print-name">Raman Ahmad</h1>
+        <p style="font-size:11pt;color:#64748b;margin:4px 0 0" id="print-subtitle">Fullstack Developer &amp; NLP Researcher</p>
+      </div>
+      <div style="text-align:right;font-size:9pt;color:#64748b;line-height:1.7">
+        <div>raman.ahmad2022@gmail.com</div>
+        <div>Hamburg, Deutschland</div>
+        <div>github.com/RamanAhmad</div>
+        <div>orcid.org/0009-0001-8012-3945</div>
+      </div>
+    </div>
+
+    <!-- Beruflich -->
+    <div class="print-section">
+      <h2 id="print-professional" style="font-family:'DM Serif Display',Georgia,serif;font-size:13pt;color:#2563eb;border-bottom:1.5px solid #2563eb;padding-bottom:4px;margin-bottom:10px">Beruflicher Werdegang</h2>
+      <div class="print-entry">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+          <strong id="print-dps-title">Werkstudent – Fullstack Softwareentwicklung</strong>
+          <span style="color:#64748b;font-size:9pt">04/2021 – heute</span>
+        </div>
+        <div style="color:#64748b;font-size:9.5pt;margin-bottom:5px" id="print-dps-company">DPS Engineering GmbH, Hamburg</div>
+        <ul style="margin:0;padding-left:1.2em;font-size:9.5pt;line-height:1.6">
+          <li id="print-dps-t1">Automatisierte Frontend-Tests mit Selenium</li>
+          <li id="print-dps-t2">Entwicklung von Backend (Spring Boot) und Frontend (React, TypeScript)</li>
+          <li id="print-dps-t3">Unterstützung bei Datenbankmigrationen (Liquibase)</li>
+          <li id="print-dps-t4">Optimierung von Entwicklungs- und Testprozessen</li>
+          <li id="print-dps-t5">Einrichtung von Testsystemen (Jenkins, Docker/Podman)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Studium -->
+    <div class="print-section">
+      <h2 id="print-education" style="font-family:'DM Serif Display',Georgia,serif;font-size:13pt;color:#2563eb;border-bottom:1.5px solid #2563eb;padding-bottom:4px;margin-bottom:10px">Studium</h2>
+      <div class="print-entry" style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+        <div>
+          <strong id="print-haw-title">B.Sc. Angewandte Informatik</strong>
+          <div style="color:#64748b;font-size:9.5pt" id="print-haw-loc">HAW Hamburg</div>
+          <div style="font-size:9.5pt;margin-top:3px" id="print-haw-thesis">Thesis: Maschinelle Übersetzung für Low-Resource-Sprachen (Kobani-Variante des Kurmanji).</div>
+        </div>
+        <span style="color:#64748b;font-size:9pt;white-space:nowrap" id="print-haw-period">04/2021 – heute</span>
+      </div>
+      <div class="print-entry" style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <strong id="print-aleppo-title">Maschinenbau (nicht abgeschlossen)</strong>
+          <div style="color:#64748b;font-size:9.5pt" id="print-aleppo-loc">Universität Aleppo, Syrien</div>
+        </div>
+        <span style="color:#64748b;font-size:9pt;white-space:nowrap" id="print-aleppo-period">09/2010 – 08/2011</span>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="print-section">
+      <h2 id="print-skills" style="font-family:'DM Serif Display',Georgia,serif;font-size:13pt;color:#2563eb;border-bottom:1.5px solid #2563eb;padding-bottom:4px;margin-bottom:10px">Software-Kenntnisse</h2>
+      <table style="width:100%;font-size:9.5pt;border-collapse:collapse">
+        <tr><td style="width:35%;padding:3px 0;vertical-align:top"><strong id="print-prog">Programmiersprachen</strong></td><td>Java, Python, JavaScript, C</td></tr>
+        <tr><td style="padding:3px 0;vertical-align:top"><strong id="print-frontend">Frontend</strong></td><td>React, TypeScript, Vue.js, HTML/CSS</td></tr>
+        <tr><td style="padding:3px 0;vertical-align:top"><strong id="print-backend">Backend</strong></td><td>Spring Boot, Quarkus, Liquibase, Spring Batch</td></tr>
+        <tr><td style="padding:3px 0;vertical-align:top"><strong id="print-db">Datenbanken</strong></td><td>PostgreSQL, MSSQL</td></tr>
+        <tr><td style="padding:3px 0;vertical-align:top"><strong id="print-tools">Tools</strong></td><td>Docker, Jenkins, Selenium, Keycloak, JMeter, Postman, OpenTelemetry</td></tr>
+        <tr><td style="padding:3px 0;vertical-align:top"><strong id="print-formats">Datenformate</strong></td><td>JSON, XML, YAML, XSD</td></tr>
+      </table>
+    </div>
+
+    <!-- Sprachen -->
+    <div class="print-section">
+      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:13pt;color:#2563eb;border-bottom:1.5px solid #2563eb;padding-bottom:4px;margin-bottom:10px">Sprachkenntnisse</h2>
+      <table style="width:100%;font-size:9.5pt">
+        <tr><td style="width:35%;padding:2px 0">Kurdisch (Kurmanji / Soranî)</td><td>Muttersprache</td></tr>
+        <tr><td style="padding:2px 0">Arabisch</td><td>C2</td></tr>
+        <tr><td style="padding:2px 0">Deutsch</td><td>C1</td></tr>
+        <tr><td style="padding:2px 0">Englisch</td><td>B2</td></tr>
+      </table>
+    </div>
+
+    <!-- Publikationen -->
+    <div class="print-section">
+      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:13pt;color:#2563eb;border-bottom:1.5px solid #2563eb;padding-bottom:4px;margin-bottom:10px">Publikationen & Konferenzen</h2>
+      <div style="font-size:9.5pt;line-height:1.7">
+        <div style="margin-bottom:5px">Ahmad, R., &amp; Schuler, C. (2023). <em>Analysis of Phonology and Morphology in the Kobani Dialect.</em> Poster, ICKL-6, Frankfurt.</div>
+        <div>Schuler, C., &amp; Ahmad, R. (2023). <em>Towards a Complete Mapping of Kurdish Dialectology.</em> Poster, ICKL-6, Frankfurt.</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="border-top:1px solid #e2e8f0;margin-top:0.8cm;padding-top:0.4cm;font-size:8.5pt;color:#94a3b8;display:flex;justify-content:space-between">
+      <span>Raman Ahmad · CV</span>
+      <span>Hamburg · <span id="print-year">2026</span></span>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-ink text-paper/70 py-14">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-10 mb-10">
+      <div class="space-y-3"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-display text-sm">RA</div><span class="font-display text-paper text-base">Raman Ahmad</span></div><p class="text-xs text-paper/40 max-w-xs leading-relaxed">Fullstack Developer &amp; NLP Researcher<br>HAW Hamburg</p></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-2 text-sm">
+        <a href="index.html" class="hover:text-paper transition-colors" data-i18n="nav.home">Startseite</a>
+        <a href="ueber-mich.html" class="hover:text-paper transition-colors" data-i18n="nav.about">Über mich</a>
+        <a href="forschung.html" class="hover:text-paper transition-colors" data-i18n="nav.research">Forschung</a>
+        <a href="publikationen.html" class="hover:text-paper transition-colors" data-i18n="nav.publications">Publikationen</a>
+        <a href="projekte.html" class="hover:text-paper transition-colors" data-i18n="nav.projects">Projekte</a>
+        <a href="interviews.html" class="hover:text-paper transition-colors" data-i18n="nav.interviews">Interviews</a>
+        <a href="cv.html" class="hover:text-paper transition-colors" data-i18n="nav.cv">CV</a>
+        <a href="kontakt.html" class="hover:text-paper transition-colors" data-i18n="nav.contact">Kontakt</a>
+      </div>
+      <div class="flex items-center gap-3"><a href="https://github.com/RamanAhmad" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-white/8 hover:bg-accent flex items-center justify-center transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.32.76-1.62-2.67-.3-5.48-1.34-5.48-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.53.12-3.19 0 0 1.01-.32 3.31 1.23.96-.27 1.98-.4 3-.41 1.02.01 2.04.14 3 .41 2.3-1.55 3.31-1.23 3.31-1.23.66 1.66.24 2.89.12 3.19.77.84 1.24 1.92 1.24 3.24 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="https://www.linkedin.com/in/raman-ahmad-5243ab30b/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-white/8 hover:bg-accent flex items-center justify-center transition-colors"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.029-3.058-1.867-3.058-1.867 0-2.152 1.459-2.152 2.966v5.696h-3v-11h2.882v1.509h.039c.401-.757 1.381-1.557 2.837-1.557 3.033 0 3.597 1.997 3.597 4.597v6.451z"/></svg></a></div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-paper/30" data-i18n="footer.copyright">© 2026 Raman Ahmad — Alle Rechte vorbehalten.</div>
+  </div>
+</footer>
 <button id="btt" aria-label="Nach oben"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg></button>
+
 <script>
-  const themeBtn=document.getElementById('theme-toggle'),sunI=document.getElementById('sun-icon'),moonI=document.getElementById('moon-icon');function updateIcons(){const d=document.documentElement.classList.contains('dark');sunI.classList.toggle('hidden',!d);moonI.classList.toggle('hidden',d)}updateIcons();themeBtn.addEventListener('click',()=>{document.documentElement.classList.toggle('dark');localStorage.theme=document.documentElement.classList.contains('dark')?'dark':'light';updateIcons()});
+  /* ── Theme ── */
+  const themeBtn=document.getElementById('theme-toggle'),sunI=document.getElementById('sun-icon'),moonI=document.getElementById('moon-icon');
+  function updateIcons(){const d=document.documentElement.classList.contains('dark');sunI.classList.toggle('hidden',!d);moonI.classList.toggle('hidden',d)}
+  updateIcons();themeBtn.addEventListener('click',()=>{document.documentElement.classList.toggle('dark');localStorage.theme=document.documentElement.classList.contains('dark')?'dark':'light';updateIcons()});
+  /* ── Navbar scroll ── */
   const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{const s=window.scrollY>20;['bg-paper/95','backdrop-blur-md','border-b','border-gray-200','shadow-sm'].forEach(c=>navbar.classList.toggle(c,s))});
+  /* ── Mobile menu ── */
   const mT=document.getElementById('menu-toggle'),mC=document.getElementById('menu-close'),mM=document.getElementById('mobile-menu'),mB=document.getElementById('mobile-backdrop'),hI=document.getElementById('ham-icon'),xI=document.getElementById('x-icon');
-  function openM(){mM.classList.remove('translate-x-full');mB.classList.remove('hidden');hI.classList.add('hidden');xI.classList.remove('hidden');document.body.style.overflow='hidden'}function closeM(){mM.classList.add('translate-x-full');mB.classList.add('hidden');hI.classList.remove('hidden');xI.classList.add('hidden');document.body.style.overflow=''}
-  if(mT)mT.addEventListener('click',openM);if(mC)mC.addEventListener('click',closeM);if(mB)mB.addEventListener('click',closeM);document.querySelectorAll('.mob-link').forEach(l=>l.addEventListener('click',closeM));
-  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.08});document.querySelectorAll('.sr').forEach(el=>io.observe(el));
+  function openM(){mM.classList.remove('translate-x-full');mB.classList.remove('hidden');hI.classList.add('hidden');xI.classList.remove('hidden');document.body.style.overflow='hidden'}
+  function closeM(){mM.classList.add('translate-x-full');mB.classList.add('hidden');hI.classList.remove('hidden');xI.classList.add('hidden');document.body.style.overflow=''}
+  if(mT)mT.addEventListener('click',openM);if(mC)mC.addEventListener('click',closeM);if(mB)mB.addEventListener('click',closeM);
+  document.querySelectorAll('.mob-link').forEach(l=>l.addEventListener('click',closeM));
+  /* ── Scroll reveal ── */
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.08});
+  document.querySelectorAll('.sr').forEach(el=>io.observe(el));
+  /* ── Back to top ── */
   const btt=document.getElementById('btt');window.addEventListener('scroll',()=>btt.classList.toggle('show',window.scrollY>400));btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  /* ── Print / PDF ── */
+  function printCV(){
+    // Show the hidden print area, hide the main content
+    const printArea = document.getElementById('cv-print-area');
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+    const nav = document.querySelector('nav');
+    const btt = document.getElementById('btt');
+
+    // Apply current language to print area
+    const lang = localStorage.getItem('ra_lang') || 'de';
+    const labels = {
+      de: { prof:'Beruflicher Werdegang', edu:'Studium', skills:'Software-Kenntnisse', subtitle:'Fullstack Developer & NLP Researcher' },
+      en: { prof:'Professional Experience', edu:'Education', skills:'Technical Skills', subtitle:'Fullstack Developer & NLP Researcher' },
+      ku: { prof:'Dîroka Pîşeyî', edu:'Xwendin', skills:'Jêhatîyên Teknîkî', subtitle:'Pêşkêşkerê Fullstack & Hezkirê NLP' },
+      ckb: { prof:'دۆسیەی پیشەیی', edu:'خوێندن', skills:'شارەزاییە تەکنیکییەکان', subtitle:'پێشکەشکەری Fullstack & هەوڵدەری NLP' }
+    };
+    const l = labels[lang] || labels.de;
+    const profEl = document.getElementById('print-professional');
+    const eduEl = document.getElementById('print-education');
+    const skillsEl = document.getElementById('print-skills');
+    const subtitleEl = document.getElementById('print-subtitle');
+    if(profEl) profEl.textContent = l.prof;
+    if(eduEl) eduEl.textContent = l.edu;
+    if(skillsEl) skillsEl.textContent = l.skills;
+    if(subtitleEl) subtitleEl.textContent = l.subtitle;
+    document.getElementById('print-year').textContent = new Date().getFullYear();
+
+    printArea.style.display = 'block';
+    [main, footer, nav, btt].forEach(el => { if(el) el.style.display = 'none'; });
+    window.print();
+    // Restore after print dialog closes
+    setTimeout(()=>{
+      printArea.style.display = 'none';
+      [main, footer, nav, btt].forEach(el => { if(el) el.style.display = ''; });
+    }, 500);
+  }
 </script>
+<script src="js/i18n.js"></script>
 </body></html>
