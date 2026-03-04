@@ -1,685 +1,82 @@
-/**
- * i18n.js – Raman Ahmad Portfolio
- * Supports: de | en | ku (Kurmanji) | ckb (Soranî)
- * Usage: add data-i18n="key" to any element.
- *        add data-i18n-html="key" to allow inner HTML (e.g. <strong> tags).
- *        add data-i18n-placeholder="key" on inputs.
- */
-
+// js/i18n.js
 (function () {
-  /* ─── All translations ─── */
-  const translations = {
-    de: {
-      /* Navigation */
-      'nav.home': 'Startseite',
-      'nav.about': 'Über mich',
-      'nav.research': 'Forschung',
-      'nav.publications': 'Publikationen',
-      'nav.projects': 'Projekte',
-      'nav.interviews': 'Interviews',
-      'nav.cv': 'CV',
-      'nav.contact': 'Kontakt',
-      'nav.academic': 'Akademisches',
 
-      /* Footer */
-      'footer.copyright': '© 2026 Raman Ahmad – Alle Rechte vorbehalten.',
+  // ─── DARK MODE ────────────────────────────────────────────────────────────
+  // Das <head>-Script setzt schon die Klasse; hier nur den Toggle-Button sync.
+  function initDarkMode() {
+    const toggle = document.getElementById('theme-toggle');
+    const sun    = document.getElementById('sun');
+    const moon   = document.getElementById('moon');
+    if (!toggle || !sun || !moon) return;
 
-      /* ── index ── */
-      'hero.title': 'Raman Ahmad',
-      'hero.subtitle': 'Fullstack Developer & NLP Enthusiast',
-      'hero.bio': 'Ich bin Fullstack Developer mit mehr als 4,5 Jahren praktischer Erfahrung in Frontend (React + TypeScript) und Backend (Spring Boot / Java). Als NLP-Enthusiast und Student an der HAW Hamburg (B.Sc. Applied Computer Science) arbeite ich an meiner Abschlussarbeit zu maschineller Übersetzung für Low-Resource-Sprachen. Ich suche nach neuen Herausforderungen in Softwareentwicklung und Forschung.',
-      'hero.stat1': 'Forschungsprojekte (Thesis)',
-      'hero.stat2': 'Jahre Erfahrung',
-      'hero.stat3': 'Konferenz-Poster',
-      'hero.stat4': 'Aktuelle Stelle (DPS)',
-      'index.profiles': 'Profile & Social Media',
-
-      /* ── über mich ── */
-      'about.title': 'Über mich',
-      'about.fullstack': 'Fullstack Entwicklung',
-      'about.fullstack_text': 'Mehr als 4.5 Jahre Erfahrung in Frontend (React, TypeScript) und Backend (Spring Boot, Java).',
-      'about.nlp': 'NLP & Forschung',
-      'about.nlp_text': 'Fokus auf Low-Resource-Sprachen, maschinelle Übersetzung und kurdische Linguistik (Thesis & Konferenzen).',
-      'about.social': 'Soziales Engagement',
-      'about.social_text': 'Ehrenamtlich als Sprachmittler, Nachhilfelehrer und Multiplikator (AWO, Diakonie, BamF).',
-      'about.languages': 'Sprachen & Weiterbildung',
-      'about.languages_text': 'Deutsch C1, Englisch B2, Arabisch C2, Kurdisch Muttersprache. Zertifikate in Sprachkursen und Coaching.',
-      'about.experience_years': 'Jahre Berufserfahrung',
-      'about.certificates': 'Weiterbildungen & Zertifikate',
-
-      /* ── forschung ── */
-      'research.title': 'Forschungsschwerpunkte',
-      'research.machine_translation': 'Machine Translation',
-      'research.machine_translation_text': 'Hybrider Ansatz für maschinelle Übersetzung von Low-Resource-Sprachen, Fokus auf Kobani-Variante des Kurmanji (Bachelor-Thesis).',
-      'research.kurdish_linguistics': 'Kurdish Linguistics',
-      'research.kurdish_linguistics_text': 'Forschung zur Phonologie, Morphologie und Dialektologie des Kurdischen (z.B. Kobani-Variante, ICKL-6 Konferenz).',
-      'research.low_resource_nlp': 'Low-Resource NLP',
-      'research.low_resource_nlp_text': 'Entwicklung von NLP-Technologien für Sprachen mit begrenzten Ressourcen, inkl. Korpus-Aufbau.',
-      'research.fullstack_in_research': 'Fullstack Development in Forschung',
-      'research.fullstack_in_research_text': 'Integration von Dev-Tools (React, Spring Boot) in NLP-Projekte für praktische Anwendungen.',
-
-      /* ── publikationen ── */
-      'publications.title': 'Wissenschaftliche Publikationen',
-      'publications.subtitle': 'Konferenz-Poster und wissenschaftliche Arbeiten.',
-      'publications.poster': 'Conference Poster',
-      'publications.poster1_title': 'Analysis of Phonology and Morphology in the Kobani Dialect',
-      'publications.poster1_authors': 'Ahmad, R., & Schuler, C. • 6th International Conference on Kurdish Linguistics (ICKL-6)',
-      'publications.poster1_desc': 'Präsentation der phonologischen und morphologischen Analyse des Kobani-Dialekts zusammen mit Christian Schuler.',
-      'publications.poster2_title': 'Towards a Complete Mapping of Kurdish Dialectology',
-      'publications.poster2_authors': 'Schuler, C., & Ahmad, R. • 6th International Conference on Kurdish Linguistics (ICKL-6)',
-      'publications.poster2_desc': 'Interaktive Karte zur Visualisierung der kurdischen Dialektgeographie.',
-
-      /* ── projekte ── */
-      'projects.title': 'Aktuelle & abgeschlossene Projekte',
-      'projects.subtitle': 'Überblick über meine Entwicklungs- und Forschungsprojekte.',
-      'projects.ongoing': 'Laufend',
-      'projects.completed': 'Abgeschlossen',
-      'projects.achievements': 'Erfolge:',
-      'projects.dps_title': 'Fullstack Entwicklung bei DPS',
-      'projects.dps_period': 'DPS Engineering GmbH • 04/2021 – heute',
-      'projects.dps_desc': 'Entwicklung von Backend (Spring Boot) und Frontend (React), Tests, Migrationen, CI/CD.',
-      'projects.dps_ach1': 'Automatisierte Tests mit Selenium',
-      'projects.dps_ach2': 'Optimierung von Prozessen',
-      'projects.dps_ach3': 'KI-Tools (Copilot, ChatGPT)',
-      'projects.thesis_title': 'Bachelor-Thesis: Maschinelle Übersetzung',
-      'projects.thesis_period': 'HAW Hamburg • 2021 – 2026',
-      'projects.thesis_desc': 'Hybrider Ansatz für Übersetzung der Kobani-Variante des Kurmanji (Low-Resource NLP).',
-      'projects.thesis_ach1': 'Korpus-Aufbau',
-      'projects.thesis_ach2': 'ML-Methoden',
-      'projects.ickl_title': 'Dialect Mapping & Kobani Analysis',
-      'projects.ickl_period': 'Independent Research • 2023',
-      'projects.ickl_desc': 'Kartierung kurdischer Dialekte und Analyse des Kobani-Dialekts (präsentiert bei ICKL-6).',
-      'projects.ickl_ach1': 'Konferenz-Poster',
-      'projects.ickl_ach2': 'Zusammenarbeit mit C. Schuler',
-
-      /* ── interviews ── */
-      'interviews.title': 'Interviews & öffentliche Auftritte',
-      'interviews.subtitle': 'Wissenschaftskommunikation und Konferenzen.',
-      'interviews.conference': 'Conference',
-      'interviews.date1': '04.–05. September 2023 • 2 Tage',
-      'interviews.ickl_title': 'ICKL-6 Conference Attendance',
-      'interviews.ickl_location': '6th International Conference on Kurdish Linguistics (ICKL-6), Frankfurt am Main',
-      'interviews.ickl_desc': 'Teilnahme mit Christian Schuler, Präsentation von zwei Postern zu kurdischer Linguistik.',
-      'interviews.poster': 'Poster',
-      'interviews.date2': 'September 2023',
-      'interviews.date3': 'September 2023',
-      'interviews.poster1_title': 'Poster: Analysis of Phonology and Morphology in the Kobani Dialect',
-      'interviews.poster1_session': 'ICKL-6 Poster Session',
-      'interviews.poster1_desc': 'Präsentation der phonologischen und morphologischen Analyse des Kobani-Dialekts zusammen mit Christian Schuler.',
-      'interviews.poster2_title': 'Poster: Towards a Complete Mapping of Kurdish Dialectology',
-      'interviews.poster2_session': 'ICKL-6 Poster Session',
-      'interviews.poster2_desc': 'Vorstellung des Projekts zur umfassenden Kartierung kurdischer Dialekte mit Christian Schuler.',
-      'interviews.tags_kurdish_ling': 'Kurdish Linguistics',
-      'interviews.tags_low_resource': 'Low-Resource Languages',
-      'interviews.tags_phonology': 'Phonology',
-      'interviews.tags_morphology': 'Morphology',
-      'interviews.tags_kobani': 'Kobani Dialect',
-      'interviews.tags_dialectology': 'Dialectology',
-      'interviews.tags_digital_mapping': 'Digital Mapping',
-      'interviews.tags_kurdish': 'Kurdish',
-
-      /* ── cv ── */
-      'cv.title': 'Curriculum Vitae',
-      'cv.subtitle': 'Akademischer und beruflicher Werdegang, Kenntnisse und persönliche Daten.',
-      'cv.professional': 'Beruflicher Werdegang',
-      'cv.dps_title': 'Werkstudent – Fullstack Softwareentwicklung',
-      'cv.dps_company': 'DPS Engineering GmbH, Hamburg',
-      'cv.dps_task1': 'Automatisierte Frontend-Tests',
-      'cv.dps_task2': 'Entwicklung von Backend und Frontend',
-      'cv.dps_task3': 'Unterstützung bei Datenbankmigrationen',
-      'cv.dps_task4': 'Optimierung von Entwicklungs- und Testprozessen',
-      'cv.dps_task5': 'Einrichtung von Testsystemen',
-      'cv.education': 'Studium',
-      'cv.haw_title': 'B.Sc. Angewandte Informatik',
-      'cv.haw_location': 'HAW Hamburg',
-      'cv.haw_period': '04/2021 – heute',
-      'cv.haw_thesis': 'Abschlussarbeit: Maschinelle Übersetzung für Low-Resource-Sprachen: Ein hybrider Ansatz zur Übersetzung für die Kobani-Variante des Kurmanji.',
-      'cv.aleppo_title': 'Maschinenbau',
-      'cv.aleppo_location': 'Universität Aleppo, Syrien',
-      'cv.aleppo_period': '09/2010 – 08/2011',
-      'cv.skills': 'Software-Kenntnisse',
-      'cv.programming': 'Programmiersprachen',
-      'cv.frontend': 'Frontend-Technologien',
-      'cv.backend': 'Backend-Technologien',
-      'cv.databases': 'Datenbanken',
-      'cv.tools': 'Tools',
-      'cv.formats': 'Datenformate',
-      'cv.download': 'CV als PDF herunterladen',
-
-      /* ── kontakt ── */
-      'contact.title': 'Kontakt',
-      'contact.subtitle': 'Lassen Sie uns zusammenarbeiten – bereit für Ihr nächstes digitales oder Forschungsprojekt?',
-      'contact.quick_contact': 'Schnelle Kontaktaufnahme',
-      'contact.email_label': 'E-Mail',
-      'contact.location_label': 'Standort',
-      'contact.location': 'Hamburg, Deutschland',
-      'contact.social_profiles': 'Profile & Social Media',
-      'contact.form_title': 'Nachricht senden',
-      'contact.name_label': 'Name *',
-      'contact.email_label_form': 'E-Mail *',
-      'contact.subject_label': 'Betreff',
-      'contact.message_label': 'Nachricht *',
-      'contact.send_button': 'Nachricht senden →',
-      'contact.response_time': 'Ich antworte in der Regel innerhalb von <strong>24 Stunden</strong> auf alle Anfragen.',
-      'contact.github': 'GitHub',
-      'contact.linkedin': 'LinkedIn',
-      'contact.orcid': 'ORCID',
-      'contact.youtube': 'YouTube',
-      'contact.email': 'Email',
-    },
-
-    en: {
-      'nav.home': 'Home',
-      'nav.about': 'About Me',
-      'nav.research': 'Research',
-      'nav.publications': 'Publications',
-      'nav.projects': 'Projects',
-      'nav.interviews': 'Interviews',
-      'nav.cv': 'CV',
-      'nav.contact': 'Contact',
-      'nav.academic': 'Academic',
-      'footer.copyright': '© 2026 Raman Ahmad – All rights reserved.',
-
-      'hero.title': 'Raman Ahmad',
-      'hero.subtitle': 'Fullstack Developer & NLP Enthusiast',
-      'hero.bio': 'I am a Fullstack Developer with more than 4.5 years of practical experience in Frontend (React + TypeScript) and Backend (Spring Boot / Java). As an NLP enthusiast and student at HAW Hamburg (B.Sc. Applied Computer Science), I am working on my thesis on machine translation for low-resource languages. I am looking for new challenges in software development and research.',
-      'hero.stat1': 'Research projects (Thesis)',
-      'hero.stat2': 'Years of experience',
-      'hero.stat3': 'Conference posters',
-      'hero.stat4': 'Current position (DPS)',
-      'index.profiles': 'Profiles & Social Media',
-
-      'about.title': 'About Me',
-      'about.fullstack': 'Fullstack Development',
-      'about.fullstack_text': 'More than 4.5 years of experience in Frontend (React, TypeScript) and Backend (Spring Boot, Java).',
-      'about.nlp': 'NLP & Research',
-      'about.nlp_text': 'Focus on low-resource languages, machine translation, and Kurdish linguistics (thesis & conferences).',
-      'about.social': 'Social Engagement',
-      'about.social_text': 'Volunteer work as language mediator, tutor, and multiplier (AWO, Diakonie, BamF).',
-      'about.languages': 'Languages & Further Education',
-      'about.languages_text': 'German C1, English B2, Arabic C2, Kurdish native. Certificates in language courses and coaching.',
-      'about.experience_years': 'Years of Professional Experience',
-      'about.certificates': 'Further Trainings & Certificates',
-
-      'research.title': 'Research Focus Areas',
-      'research.machine_translation': 'Machine Translation',
-      'research.machine_translation_text': 'Hybrid approach for machine translation of low-resource languages, focus on Kobani variant of Kurmanji (Bachelor thesis).',
-      'research.kurdish_linguistics': 'Kurdish Linguistics',
-      'research.kurdish_linguistics_text': 'Research on phonology, morphology, and dialectology of Kurdish (e.g. Kobani variant, ICKL-6 conference).',
-      'research.low_resource_nlp': 'Low-Resource NLP',
-      'research.low_resource_nlp_text': 'Development of NLP technologies for languages with limited resources, including corpus building.',
-      'research.fullstack_in_research': 'Fullstack Development in Research',
-      'research.fullstack_in_research_text': 'Integration of dev tools (React, Spring Boot) into NLP projects for practical applications.',
-
-      'publications.title': 'Scientific Publications',
-      'publications.subtitle': 'Conference posters and academic works.',
-      'publications.poster': 'Conference Poster',
-      'publications.poster1_title': 'Analysis of Phonology and Morphology in the Kobani Dialect',
-      'publications.poster1_authors': 'Ahmad, R., & Schuler, C. • 6th International Conference on Kurdish Linguistics (ICKL-6)',
-      'publications.poster1_desc': 'Presentation of the phonological and morphological analysis of the Kobani dialect together with Christian Schuler.',
-      'publications.poster2_title': 'Towards a Complete Mapping of Kurdish Dialectology',
-      'publications.poster2_authors': 'Schuler, C., & Ahmad, R. • 6th International Conference on Kurdish Linguistics (ICKL-6)',
-      'publications.poster2_desc': 'Interactive map for visualizing Kurdish dialect geography.',
-
-      'projects.title': 'Current & Completed Projects',
-      'projects.subtitle': 'Overview of my development and research projects.',
-      'projects.ongoing': 'Ongoing',
-      'projects.completed': 'Completed',
-      'projects.achievements': 'Achievements:',
-      'projects.dps_title': 'Fullstack Development at DPS',
-      'projects.dps_period': 'DPS Engineering GmbH • 04/2021 – present',
-      'projects.dps_desc': 'Development of backend (Spring Boot) and frontend (React), testing, migrations, CI/CD.',
-      'projects.dps_ach1': 'Automated tests with Selenium',
-      'projects.dps_ach2': 'Process optimization',
-      'projects.dps_ach3': 'AI tools (Copilot, ChatGPT)',
-      'projects.thesis_title': 'Bachelor Thesis: Machine Translation',
-      'projects.thesis_period': 'HAW Hamburg • 2021 – 2026',
-      'projects.thesis_desc': 'Hybrid approach for translation of the Kobani variant of Kurmanji (Low-Resource NLP).',
-      'projects.thesis_ach1': 'Corpus building',
-      'projects.thesis_ach2': 'ML methods',
-      'projects.ickl_title': 'Dialect Mapping & Kobani Analysis',
-      'projects.ickl_period': 'Independent Research • 2023',
-      'projects.ickl_desc': 'Mapping of Kurdish dialects and analysis of the Kobani dialect (presented at ICKL-6).',
-      'projects.ickl_ach1': 'Conference posters',
-      'projects.ickl_ach2': 'Collaboration with C. Schuler',
-
-      'interviews.title': 'Interviews & Public Appearances',
-      'interviews.subtitle': 'Science communication and conferences.',
-      'interviews.conference': 'Conference',
-      'interviews.date1': '04–05 September 2023 • 2 days',
-      'interviews.ickl_title': 'ICKL-6 Conference Attendance',
-      'interviews.ickl_location': '6th International Conference on Kurdish Linguistics (ICKL-6), Frankfurt am Main',
-      'interviews.ickl_desc': 'Attendance with Christian Schuler, presentation of two posters on Kurdish linguistics.',
-      'interviews.poster': 'Poster',
-      'interviews.date2': 'September 2023',
-      'interviews.date3': 'September 2023',
-      'interviews.poster1_title': 'Poster: Analysis of Phonology and Morphology in the Kobani Dialect',
-      'interviews.poster1_session': 'ICKL-6 Poster Session',
-      'interviews.poster1_desc': 'Presentation of the phonological and morphological analysis of the Kobani dialect with Christian Schuler.',
-      'interviews.poster2_title': 'Poster: Towards a Complete Mapping of Kurdish Dialectology',
-      'interviews.poster2_session': 'ICKL-6 Poster Session',
-      'interviews.poster2_desc': 'Presentation of the project for comprehensive mapping of Kurdish dialects with Christian Schuler.',
-      'interviews.tags_kurdish_ling': 'Kurdish Linguistics',
-      'interviews.tags_low_resource': 'Low-Resource Languages',
-      'interviews.tags_phonology': 'Phonology',
-      'interviews.tags_morphology': 'Morphology',
-      'interviews.tags_kobani': 'Kobani Dialect',
-      'interviews.tags_dialectology': 'Dialectology',
-      'interviews.tags_digital_mapping': 'Digital Mapping',
-      'interviews.tags_kurdish': 'Kurdish',
-
-      'cv.title': 'Curriculum Vitae',
-      'cv.subtitle': 'Academic and professional background, skills, and personal details.',
-      'cv.professional': 'Professional Experience',
-      'cv.dps_title': 'Working Student – Fullstack Software Development',
-      'cv.dps_company': 'DPS Engineering GmbH, Hamburg',
-      'cv.dps_task1': 'Automated Frontend Tests',
-      'cv.dps_task2': 'Development of Backend and Frontend',
-      'cv.dps_task3': 'Support with Database Migrations',
-      'cv.dps_task4': 'Optimization of Development and Test Processes',
-      'cv.dps_task5': 'Setup of Test Systems',
-      'cv.education': 'Education',
-      'cv.haw_title': 'B.Sc. Applied Computer Science',
-      'cv.haw_location': 'HAW Hamburg',
-      'cv.haw_period': '04/2021 – present',
-      'cv.haw_thesis': 'Thesis: Machine Translation for Low-Resource Languages: A hybrid approach for translation into the Kobani variant of Kurmanji.',
-      'cv.aleppo_title': 'Mechanical Engineering',
-      'cv.aleppo_location': 'University of Aleppo, Syria',
-      'cv.aleppo_period': '09/2010 – 08/2011',
-      'cv.skills': 'Technical Skills',
-      'cv.programming': 'Programming Languages',
-      'cv.frontend': 'Frontend Technologies',
-      'cv.backend': 'Backend Technologies',
-      'cv.databases': 'Databases',
-      'cv.tools': 'Tools',
-      'cv.formats': 'Data Formats',
-      'cv.download': 'Download CV as PDF',
-
-      'contact.title': 'Contact',
-      'contact.subtitle': "Let's work together – ready for your next digital or research project?",
-      'contact.quick_contact': 'Quick Contact',
-      'contact.email_label': 'Email',
-      'contact.location_label': 'Location',
-      'contact.location': 'Hamburg, Germany',
-      'contact.social_profiles': 'Profiles & Social Media',
-      'contact.form_title': 'Send Message',
-      'contact.name_label': 'Name *',
-      'contact.email_label_form': 'Email *',
-      'contact.subject_label': 'Subject',
-      'contact.message_label': 'Message *',
-      'contact.send_button': 'Send Message →',
-      'contact.response_time': 'I usually reply within <strong>24 hours</strong> to all inquiries.',
-      'contact.github': 'GitHub',
-      'contact.linkedin': 'LinkedIn',
-      'contact.orcid': 'ORCID',
-      'contact.youtube': 'YouTube',
-      'contact.email': 'Email',
-    },
-
-    ku: {
-      'nav.home': 'Mal',
-      'nav.about': 'Li ser min',
-      'nav.research': 'Lêkolîn',
-      'nav.publications': 'Weşan',
-      'nav.projects': 'Projeler',
-      'nav.interviews': 'Hevpeyivîn',
-      'nav.cv': 'CV',
-      'nav.contact': 'Têkilî',
-      'nav.academic': 'Akademîk',
-      'footer.copyright': '© 2026 Raman Ahmad – Hemû Mafên Parastî ne.',
-
-      'hero.title': 'Raman Ahmad',
-      'hero.subtitle': 'Pêşkêşkerê Fullstack & Hezkirê NLP',
-      'hero.bio': 'Ez pêşkêşkerê Fullstack im ku zêdetirî 4.5 sal ezmûna pratîkî di Frontend (React + TypeScript) û Backend (Spring Boot / Java) heye. Wekî hezkirê NLP û xwendekarê HAW Hamburg (B.Sc. Zanistiya Kompîtêr a Sepandî), ez li ser teza xwe ya li ser wergerê makîneyê ji bo zimanên kêm-sedayê dixebitim. Ez li ber çavên kêşeyên nû di pêşkeftina nermalavê û lêkolînê de me.',
-      'hero.stat1': 'Projeyên Lêkolînê (Teza)',
-      'hero.stat2': 'Salên Ezmûnê',
-      'hero.stat3': 'Posterên Konferansê',
-      'hero.stat4': 'Pozîsyona Niha (DPS)',
-      'index.profiles': 'Profîl & Medyaya Civakî',
-
-      'about.title': 'Li ser min',
-      'about.fullstack': 'Pêşxistina Fullstack',
-      'about.fullstack_text': 'Zêdetirî 4.5 sal ezmûna di Frontend (React, TypeScript) û Backend (Spring Boot, Java) de.',
-      'about.nlp': 'NLP & Lêkolîn',
-      'about.nlp_text': 'Fokus li ser zimanên kêm-sedayê, wergera makîneyê û zimannasiya kurdî (tez & konferans).',
-      'about.social': 'Tevlêbûna Civakî',
-      'about.social_text': 'Karê dilxwazî wekî werger, mamoste û pirziman (AWO, Diakonie, BamF).',
-      'about.languages': 'Ziman & Perwerdeya Zêde',
-      'about.languages_text': 'Almanî C1, Îngilîzî B2, Erebî C2, Kurdî zikmakî. Sertîfîkayên di qursên ziman û perwerdeyê de.',
-      'about.experience_years': 'Salên Ezmûna Kar',
-      'about.certificates': 'Perwerde û Sertîfîkayên Zêde',
-
-      'research.title': 'Navendên Lêkolînê',
-      'research.machine_translation': 'Wergera Makîneyê',
-      'research.machine_translation_text': 'Nêzîkbûna hîbrîd ji bo wergera makîneyê ya zimanên kêm-sedayê, fokus li ser guhertoya Kobanî ya Kurmanjî (Teza Bachelor).',
-      'research.kurdish_linguistics': 'Zimannasiya Kurdî',
-      'research.kurdish_linguistics_text': 'Lêkolîn li ser fonolojî, morfolojî û dîalektolojî ya Kurdî (mînak guhertoya Kobanî, Konferansa ICKL-6).',
-      'research.low_resource_nlp': 'NLP-ya Kêm-Sedayê',
-      'research.low_resource_nlp_text': 'Pêşxistina teknolojiyên NLP ji bo zimanên bi çavkaniyên kêm, di nav de avakirina korpusê.',
-      'research.fullstack_in_research': 'Pêşxistina Fullstack di Lêkolînê de',
-      'research.fullstack_in_research_text': 'Yekkirina amûrên pêşxistinê (React, Spring Boot) di projeyên NLP de ji bo sepandinên pratîk.',
-
-      'publications.title': 'Weşanên Zanistî',
-      'publications.subtitle': 'Posterên Konferansê û Karên Zanistî.',
-      'publications.poster': 'Posterê Konferansê',
-      'publications.poster1_title': 'Analîza Fonolojî û Morfolojî di Dîalektê Kobanî de',
-      'publications.poster1_authors': 'Ahmad, R., & Schuler, C. • Konferansa 6. Navneteweyî ya Zimannasiya Kurdî (ICKL-6)',
-      'publications.poster1_desc': 'Pêşkêşkirina analîza fonolojîk û morfolojîk a dîalektê Kobanî bi Christian Schuler re.',
-      'publications.poster2_title': 'Ber bi Nexşeya Temam a Dîalektolojiya Kurdî ve',
-      'publications.poster2_authors': 'Schuler, C., & Ahmad, R. • Konferansa 6. Navneteweyî ya Zimannasiya Kurdî (ICKL-6)',
-      'publications.poster2_desc': 'Nexşeya înteraktîf ji bo vîzûelkirina erdnîgariya dîalektên Kurdî.',
-
-      'projects.title': 'Projeyên Niha & Qediyayî',
-      'projects.subtitle': 'Nêrîna giştî li ser projeyên pêşxistin û lêkolînê yên min.',
-      'projects.ongoing': 'Dewam dike',
-      'projects.completed': 'Qediya',
-      'projects.achievements': 'Destkeftî:',
-      'projects.dps_title': 'Pêşxistina Fullstack li DPS',
-      'projects.dps_period': 'DPS Engineering GmbH • 04/2021 – îro',
-      'projects.dps_desc': 'Pêşxistina backend (Spring Boot) û frontend (React), test, migrasyon, CI/CD.',
-      'projects.dps_ach1': 'Testên otomatîk bi Selenium',
-      'projects.dps_ach2': 'Optimîzasyona pêvajoyan',
-      'projects.dps_ach3': 'Amûrên AI (Copilot, ChatGPT)',
-      'projects.thesis_title': 'Teza Bachelor: Wergera Makîneyê',
-      'projects.thesis_period': 'HAW Hamburg • 2021 – 2026',
-      'projects.thesis_desc': 'Nêzîkbûna hîbrîd ji bo wergera guhertoya Kobanî ya Kurmanjî (NLP-ya kêm-sedayê).',
-      'projects.thesis_ach1': 'Avakirina korpusê',
-      'projects.thesis_ach2': 'Rêbazên ML',
-      'projects.ickl_title': 'Nexşeya Dîalekt & Analîza Kobanî',
-      'projects.ickl_period': 'Lêkolîna Serbixwe • 2023',
-      'projects.ickl_desc': 'Nexşeya dîalektên Kurdî û analîza dîalektê Kobanî (pêşkêşkirin li ICKL-6).',
-      'projects.ickl_ach1': 'Posterên konferansê',
-      'projects.ickl_ach2': 'Hevkariya bi C. Schuler re',
-
-      'interviews.title': 'Hevpeyivîn & Pêşkêşiyên Giştî',
-      'interviews.subtitle': 'Ragihandina zanistî û konferans.',
-      'interviews.conference': 'Konferans',
-      'interviews.date1': '04–05 Îlon 2023 • 2 roj',
-      'interviews.ickl_title': 'Beşdarbûna Konferansa ICKL-6',
-      'interviews.ickl_location': 'Konferansa 6. Navneteweyî ya Zimannasiya Kurdî (ICKL-6), Frankfurt am Main',
-      'interviews.ickl_desc': 'Beşdarbûn bi Christian Schuler re, pêşkêşkirina du posteran li ser zimannasiya Kurdî.',
-      'interviews.poster': 'Poster',
-      'interviews.date2': 'Îlon 2023',
-      'interviews.date3': 'Îlon 2023',
-      'interviews.poster1_title': 'Poster: Analîza Fonolojî û Morfolojî di Dîalektê Kobanî de',
-      'interviews.poster1_session': 'Danişîna Posterê ya ICKL-6',
-      'interviews.poster1_desc': 'Pêşkêşkirina analîza fonolojîk û morfolojîk a dîalektê Kobanî bi Christian Schuler re.',
-      'interviews.poster2_title': 'Poster: Ber bi Nexşeya Temam a Dîalektolojiya Kurdî ve',
-      'interviews.poster2_session': 'Danişîna Posterê ya ICKL-6',
-      'interviews.poster2_desc': 'Pêşkêşkirina projeyê ji bo nexşeya berfireh a dîalektên Kurdî bi Christian Schuler re.',
-      'interviews.tags_kurdish_ling': 'Zimannasiya Kurdî',
-      'interviews.tags_low_resource': 'Zimanên Kêm-Sedayê',
-      'interviews.tags_phonology': 'Fonolojî',
-      'interviews.tags_morphology': 'Morfolojî',
-      'interviews.tags_kobani': 'Dîalektê Kobanî',
-      'interviews.tags_dialectology': 'Dîalektolojî',
-      'interviews.tags_digital_mapping': 'Nexşeya Dîjîtal',
-      'interviews.tags_kurdish': 'Kurdî',
-
-      'cv.title': 'Curriculum Vitae',
-      'cv.subtitle': 'Dîrok û ezmûna akademîk û pîşeyî, jêhatî û agahiyên kesane.',
-      'cv.professional': 'Dîroka Pîşeyî',
-      'cv.dps_title': 'Xwendekarê Kar – Pêşxistina Fullstack',
-      'cv.dps_company': 'DPS Engineering GmbH, Hamburg',
-      'cv.dps_task1': 'Testên Otomatîk ên Frontend',
-      'cv.dps_task2': 'Pêşxistina Backend û Frontend',
-      'cv.dps_task3': 'Piştgiriya Migrasyona Databasê',
-      'cv.dps_task4': 'Optimîzasyona Pêvajoyên Pêşxistin û Testê',
-      'cv.dps_task5': 'Sazkirina Pergalên Testê',
-      'cv.education': 'Xwendin',
-      'cv.haw_title': 'B.Sc. Informatîka Sepandî',
-      'cv.haw_location': 'HAW Hamburg',
-      'cv.haw_period': '04/2021 – îro',
-      'cv.haw_thesis': 'Tez: Wergera Makîneyê ji bo Zimanên Kêm-Sedayê: Nêzîkbûnek hîbrîd ji bo wergera guhertoya Kobanî ya Kurmanjî.',
-      'cv.aleppo_title': 'Endazyariya Mekanîkî',
-      'cv.aleppo_location': 'Zanîngeha Aleppo, Sûriye',
-      'cv.aleppo_period': '09/2010 – 08/2011',
-      'cv.skills': 'Jêhatîyên Teknîkî',
-      'cv.programming': 'Zimanên Bernamekirinê',
-      'cv.frontend': 'Teknolojiyên Frontend',
-      'cv.backend': 'Teknolojiyên Backend',
-      'cv.databases': 'Databas',
-      'cv.tools': 'Amûr',
-      'cv.formats': 'Formatên Daneyê',
-      'cv.download': 'CV wekî PDF daxin',
-
-      'contact.title': 'Têkilî',
-      'contact.subtitle': 'Bila em bi hev re bixebitin – amade ji bo projeya weya dîjîtal an lêkolînê ya pêş?',
-      'contact.quick_contact': 'Têkiliya Zû',
-      'contact.email_label': 'E-name',
-      'contact.location_label': 'Cih',
-      'contact.location': 'Hamburg, Almanyayê',
-      'contact.social_profiles': 'Medyaya Civakî & Profîl',
-      'contact.form_title': 'Peyamê Bişîne',
-      'contact.name_label': 'Nav *',
-      'contact.email_label_form': 'E-name *',
-      'contact.subject_label': 'Mijar',
-      'contact.message_label': 'Peyam *',
-      'contact.send_button': 'Peyamê Bişîne →',
-      'contact.response_time': 'Ez bi gelemperî di nav <strong>24 saetan</strong> de bersivê didim hemû pirsan.',
-      'contact.github': 'GitHub',
-      'contact.linkedin': 'LinkedIn',
-      'contact.orcid': 'ORCID',
-      'contact.youtube': 'YouTube',
-      'contact.email': 'E-name',
-    },
-
-    ckb: {
-      'nav.home': 'ماڵ',
-      'nav.about': 'دەربارەی من',
-      'nav.research': 'توێژینەوە',
-      'nav.publications': 'بڵاوکراوەکان',
-      'nav.projects': 'پڕۆژەکان',
-      'nav.interviews': 'چاوپێکەوتنەکان',
-      'nav.cv': 'CV',
-      'nav.contact': 'پەیوەندی',
-      'nav.academic': 'ئەکادیمی',
-      'footer.copyright': '© ٢٠٢٦ رەمان ئەحمەد – هەموو مافەکان پارێزراون.',
-
-      'hero.title': 'رەمان ئەحمەد',
-      'hero.subtitle': 'پێشکەشکەری Fullstack & هەوڵدەری NLP',
-      'hero.bio': 'من پێشکەشکەری Fullstack im کە زیاتر لە ٤.٥ ساڵ ئەزموونی پراکتیکی لە Frontend (React + TypeScript) و Backend (Spring Boot / Java) هەیە. وەک هەوڵدەری NLP و خوێندکاری HAW Hamburg، من لەسەر تەزاکەم کە لەسەر وەرگێڕانی ماشین بۆ زمانە کەم-سەرچاوەکان کار دەکەم.',
-      'hero.stat1': 'پرۆژەکانی توێژینەوە (تەزا)',
-      'hero.stat2': 'ساڵەکانی ئەزموون',
-      'hero.stat3': 'پوستەرەکانی کۆنفرانس',
-      'hero.stat4': 'پۆزیسیۆنی ئێستا (DPS)',
-      'index.profiles': 'پرۆفایلەکان & تۆڕە کۆمەڵایەتییەکان',
-
-      'about.title': 'دەربارەی من',
-      'about.fullstack': 'پەرەپێدانی Fullstack',
-      'about.fullstack_text': 'زیاتر لە ٤.٥ ساڵ ئەزموونی پراکتیکی لە Frontend (React, TypeScript) و Backend (Spring Boot, Java).',
-      'about.nlp': 'NLP & توێژینەوە',
-      'about.nlp_text': 'فۆکەس لەسەر زمانە کەم-سەرچاوەکان، وەرگێڕانی ماشین و زمانەوانی کوردی (تەزا & کۆنفرانسەکان).',
-      'about.social': 'تێکەڵبوونی کۆمەڵایەتی',
-      'about.social_text': 'کارەکانی خۆبەخشین وەک وەرگێڕ، مامۆستا و چەندزمان (AWO, Diakonie, BamF).',
-      'about.languages': 'زمانەکان & پەروەردەی زیاتر',
-      'about.languages_text': 'ئەڵمانی C1، ئینگلیزی B2، عەرەبی C2، کوردی زگماک. بڕوانامە لە قورسەکانی زمان و ڕاهێنان.',
-      'about.experience_years': 'ساڵەکانی ئەزموونی کار',
-      'about.certificates': 'پەروەردە و بڕوانامەکانی زیاتر',
-
-      'research.title': 'ناوەندەکانی توێژینەوە',
-      'research.machine_translation': 'وەرگێڕانی ماشین',
-      'research.machine_translation_text': 'نزیکبوونەوەی هایبرید بۆ وەرگێڕانی ماشین بۆ زمانە کەم-سەرچاوەکان، فۆکەس لەسەر جۆری کۆبانی کورمانجی.',
-      'research.kurdish_linguistics': 'زمانەوانی کوردی',
-      'research.kurdish_linguistics_text': 'توێژینەوە لەسەر فۆنۆلۆژی، مۆرفۆلۆژی و دیالێکتۆلۆژی کوردی (بۆ نموونە جۆری کۆبانی، کۆنفرانسی ICKL-6).',
-      'research.low_resource_nlp': 'NLP کەم-سەرچاوە',
-      'research.low_resource_nlp_text': 'پەرەپێدانی تەکنەلۆژیاکانی NLP بۆ زمانەکان کە سەرچاوەی کەمیان هەیە، لە نێویاندا بنیاتنانی کۆرپوس.',
-      'research.fullstack_in_research': 'پەرەپێدانی Fullstack لە توێژینەوەدا',
-      'research.fullstack_in_research_text': 'یەکخستنی ئامرازەکانی پەرەپێدان (React, Spring Boot) لە پرۆژەکانی NLP بۆ بەکارهێنانی پراکتیکی.',
-
-      'publications.title': 'بڵاوکراوە زانستییەکان',
-      'publications.subtitle': 'پوستەرەکانی کۆنفرانس و کارە زانستییەکان.',
-      'publications.poster': 'پوستەری کۆنفرانس',
-      'publications.poster1_title': 'لێکۆڵینەوەی فۆنۆلۆژی و مۆرفۆلۆژی لە دیالێکتی کۆبانی',
-      'publications.poster1_authors': 'ئەحمەد، ر.، و شولەر، س. • کۆنفرانسی شەشەمی نێودەوڵەتی زمانەوانی کوردی (ICKL-6)',
-      'publications.poster1_desc': 'پێشکەشکردنی لێکۆڵینەوەی فۆنۆلۆژی و مۆرفۆلۆژی دیالێکتی کۆبانی لەگەڵ کریستیان شولەر.',
-      'publications.poster2_title': 'بەرەو نەخشەیەکی تەواوی دیالێکتۆلۆژی کوردی',
-      'publications.poster2_authors': 'شولەر، س.، و ئەحمەد، ر. • کۆنفرانسی شەشەمی نێودەوڵەتی زمانەوانی کوردی (ICKL-6)',
-      'publications.poster2_desc': 'نەخشەیەکی ئینتەرئاکتیڤ بۆ وێنەکردنی جوگرافیای دیالێکتەکانی کوردی.',
-
-      'projects.title': 'پڕۆژەکانی ئێستا و تەواوکراوەکان',
-      'projects.subtitle': 'چاوەڕوانی گشتی لە پڕۆژەکانی پەرەپێدان و توێژینەوەی من.',
-      'projects.ongoing': 'بەردەوام',
-      'projects.completed': 'تەواوکراو',
-      'projects.achievements': 'دەستکەوتەکان:',
-      'projects.dps_title': 'پەرەپێدانی Fullstack لە DPS',
-      'projects.dps_period': 'DPS Engineering GmbH • 04/2021 – ئێستا',
-      'projects.dps_desc': 'پەرەپێدانی backend (Spring Boot) و frontend (React)، تاقیکردنەوە، گواستنەوە، CI/CD.',
-      'projects.dps_ach1': 'تاقیکردنەوەی ئۆتۆماتیکی بە Selenium',
-      'projects.dps_ach2': 'باشترکردنی پرۆسەکان',
-      'projects.dps_ach3': 'ئامرازەکانی AI (Copilot, ChatGPT)',
-      'projects.thesis_title': 'تەزای بەکالۆریۆس: وەرگێڕانی ماشین',
-      'projects.thesis_period': 'HAW Hamburg • 2021 – 2026',
-      'projects.thesis_desc': 'نزیکبوونەوەی هایبرید بۆ وەرگێڕانی جۆری کۆبانی کورمانجی (NLP کەم-سەرچاوە).',
-      'projects.thesis_ach1': 'بنیاتنانی کۆرپوس',
-      'projects.thesis_ach2': 'ڕێگاکانی ML',
-      'projects.ickl_title': 'نەخشەی دیالێکت & لێکۆڵینەوەی کۆبانی',
-      'projects.ickl_period': 'لێکۆڵینەوەی سەربەخۆ • 2023',
-      'projects.ickl_desc': 'نەخشەی دیالێکتەکانی کوردی و لێکۆڵینەوەی دیالێکتی کۆبانی (پێشکەشکراو لە ICKL-6).',
-      'projects.ickl_ach1': 'پوستەرەکانی کۆنفرانس',
-      'projects.ickl_ach2': 'هاوکاری لەگەڵ C. Schuler',
-
-      'interviews.title': 'چاوپێکەوتنەکان و دەرکەوتنە گشتییەکان',
-      'interviews.subtitle': 'ڕاگەیاندنی زانستی و کۆنفرانسەکان.',
-      'interviews.conference': 'کۆنفرانس',
-      'interviews.date1': '٠٤–٠٥ ئەیلوول ٢٠٢٣ • ٢ ڕۆژ',
-      'interviews.ickl_title': 'بەشداری لە کۆنفرانسی ICKL-6',
-      'interviews.ickl_location': 'کۆنفرانسی شەشەمی نێودەوڵەتی زمانەوانی کوردی (ICKL-6)، فرانکفورت ئەم مەین',
-      'interviews.ickl_desc': 'بەشداری لەگەڵ کریستیان شولەر، پێشکەشکردنی دوو پوستەر لەسەر زمانەوانی کوردی.',
-      'interviews.poster': 'پوستەر',
-      'interviews.date2': 'ئەیلوول ٢٠٢٣',
-      'interviews.date3': 'ئەیلوول ٢٠٢٣',
-      'interviews.poster1_title': 'پوستەر: لێکۆڵینەوەی فۆنۆلۆژی و مۆرفۆلۆژی لە دیالێکتی کۆبانی',
-      'interviews.poster1_session': 'دانی شێوەی پوستەری ICKL-6',
-      'interviews.poster1_desc': 'پێشکەشکردنی لێکۆڵینەوەی فۆنۆلۆژی و مۆرفۆلۆژی دیالێکتی کۆبانی لەگەڵ کریستیان شولەر.',
-      'interviews.poster2_title': 'پوستەر: بەرەو نەخشەیەکی تەواوی دیالێکتۆلۆژی کوردی',
-      'interviews.poster2_session': 'دانی شێوەی پوستەری ICKL-6',
-      'interviews.poster2_desc': 'پێشکەشکردنی پرۆژە بۆ نەخشەی گشتگیری دیالێکتەکانی کوردی لەگەڵ کریستیان شولەر.',
-      'interviews.tags_kurdish_ling': 'زمانەوانی کوردی',
-      'interviews.tags_low_resource': 'زمانە کەم-سەرچاوەکان',
-      'interviews.tags_phonology': 'فۆنۆلۆژی',
-      'interviews.tags_morphology': 'مۆرفۆلۆژی',
-      'interviews.tags_kobani': 'دیالێکتی کۆبانی',
-      'interviews.tags_dialectology': 'دیالێکتۆلۆژی',
-      'interviews.tags_digital_mapping': 'نەخشەی دیجیتاڵ',
-      'interviews.tags_kurdish': 'کوردی',
-
-      'cv.title': 'کۆرسی کەسایەتی',
-      'cv.subtitle': 'دۆسیەی ئەکادیمی و پیشەیی، شارەزاییەکان و زانیارییە کەسییەکان.',
-      'cv.professional': 'دۆسیەی پیشەیی',
-      'cv.dps_title': 'کارمەندی خوێندکار – پەرەپێدانی Fullstack',
-      'cv.dps_company': 'DPS Engineering GmbH, Hamburg',
-      'cv.dps_task1': 'تاقیکردنەوەی ئۆتۆماتیکی Frontend',
-      'cv.dps_task2': 'پەرەپێدانی Backend و Frontend',
-      'cv.dps_task3': 'پشتیوانی لە گواستنەوەی داتابەیس',
-      'cv.dps_task4': 'باشترکردنی پرۆسەکانی پەرەپێدان و تاقیکردنەوە',
-      'cv.dps_task5': 'دامەزراندنی سیستەمی تاقیکردنەوە',
-      'cv.education': 'خوێندن',
-      'cv.haw_title': 'B.Sc. ئینفۆرماتیکی جێبەجێکراو',
-      'cv.haw_location': 'HAW Hamburg',
-      'cv.haw_period': '04/2021 – ئێستا',
-      'cv.haw_thesis': 'تەزا: وەرگێڕانی ماشین بۆ زمانە کەم-سەرچاوەکان: نزیکبوونەوەیەکی هایبرید بۆ وەرگێڕانی جۆری کۆبانی کورمانجی.',
-      'cv.aleppo_title': 'ئەندازیاری مەکانیکی',
-      'cv.aleppo_location': 'زانکۆی ئەلەپۆ، سووریا',
-      'cv.aleppo_period': '09/2010 – 08/2011',
-      'cv.skills': 'شارەزاییە تەکنیکییەکان',
-      'cv.programming': 'زمانەکانی پرۆگرامسازی',
-      'cv.frontend': 'تەکنەلۆژیاکانی Frontend',
-      'cv.backend': 'تەکنەلۆژیاکانی Backend',
-      'cv.databases': 'داتابەیسەکان',
-      'cv.tools': 'ئامرازەکان',
-      'cv.formats': 'فۆرماتەکانی داتا',
-      'cv.download': 'CV وەک PDF دابەزێنە',
-
-      'contact.title': 'پەیوەندی',
-      'contact.subtitle': 'با لەگەڵ یەکدی کار بکەین – ئامادەیت بۆ پڕۆژەی دیجیتاڵی یان توێژینەوەی تازەت؟',
-      'contact.quick_contact': 'پەیوەندی خێرا',
-      'contact.email_label': 'ئیمەیڵ',
-      'contact.location_label': 'شوێن',
-      'contact.location': 'هامبورگ، ئەڵمانیا',
-      'contact.social_profiles': 'تۆڕە کۆمەڵایەتییەکان & پرۆفایلەکان',
-      'contact.form_title': 'پەیام بنێرە',
-      'contact.name_label': 'ناو *',
-      'contact.email_label_form': 'ئیمەیڵ *',
-      'contact.subject_label': 'بابەت',
-      'contact.message_label': 'پەیام *',
-      'contact.send_button': 'پەیام بنێرە →',
-      'contact.response_time': 'بە گشتی لە ماوەی <strong>24 کاتژمێردا</strong> وەڵامی هەموو پرسیارەکان دەدەمەوە.',
-      'contact.github': 'GitHub',
-      'contact.linkedin': 'LinkedIn',
-      'contact.orcid': 'ORCID',
-      'contact.youtube': 'YouTube',
-      'contact.email': 'ئیمەیڵ',
+    function syncIcons() {
+      const dark = document.documentElement.classList.contains('dark');
+      sun.classList.toggle('hidden', !dark);
+      moon.classList.toggle('hidden',  dark);
     }
-  };
 
-  /* ─── RTL languages ─── */
-  const RTL_LANGS = ['ckb', 'ar'];
+    syncIcons(); // sofort beim Laden korrekt anzeigen
 
-  /* ─── Get saved or default language ─── */
-  function getLang() {
-    return localStorage.getItem('ra_lang') || 'de';
+    toggle.addEventListener('click', function () {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme',
+        document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+      );
+      syncIcons();
+    });
   }
 
-  /* ─── Apply translations to entire document ─── */
+  // ─── SPRACHE ──────────────────────────────────────────────────────────────
   function applyTranslations(lang) {
-    const dict = translations[lang] || translations['de'];
-    const isRTL = RTL_LANGS.includes(lang);
+    // RTL nur für Soranî – Kurmanjî (ku) ist lateinschriftlich → LTR
+    document.documentElement.lang = lang;
+    document.documentElement.dir  = (lang === 'ckb') ? 'rtl' : 'ltr';
 
-    /* Direction */
-    document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
-    document.documentElement.setAttribute('lang', lang);
+    if (typeof translations === 'undefined') return;
 
-    /* text content */
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (dict[key] !== undefined) el.textContent = dict[key];
-    });
-
-    /* innerHTML (allows <strong> etc.) */
-    document.querySelectorAll('[data-i18n-html]').forEach(el => {
-      const key = el.getAttribute('data-i18n-html');
-      if (dict[key] !== undefined) el.innerHTML = dict[key];
-    });
-
-    /* placeholders */
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-      const key = el.getAttribute('data-i18n-placeholder');
-      if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
-    });
-
-    /* Sync all language selectors on the page */
-    document.querySelectorAll('.lang-select').forEach(sel => {
-      sel.value = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      var val = translations[lang] && translations[lang][key];
+      if (!val) return;
+      // data-i18n-html → innerHTML erlaubt (z.B. <strong> in kontakt.html)
+      if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
     });
   }
 
-  /* ─── Switch language and persist ─── */
-  function switchLang(lang) {
-    if (!translations[lang]) return;
-    localStorage.setItem('ra_lang', lang);
+  function initLanguage() {
+    var sel  = document.getElementById('language-select');
+    // Sprache aus localStorage lesen – Fallback Deutsch
+    var lang = localStorage.getItem('language') || 'de';
+
+    // Dropdown ZUERST setzen, dann Texte tauschen
+    if (sel) sel.value = lang;
     applyTranslations(lang);
+
+    if (sel) {
+      sel.addEventListener('change', function (e) {
+        var chosen = e.target.value;
+        localStorage.setItem('language', chosen);
+        applyTranslations(chosen);
+      });
+    }
   }
 
-  /* ─── Init on DOMContentLoaded ─── */
-  function init() {
-    const lang = getLang();
-
-    /* Wire up all .lang-select dropdowns */
-    document.querySelectorAll('.lang-select').forEach(sel => {
-      sel.value = lang;
-      sel.addEventListener('change', e => switchLang(e.target.value));
-    });
-
-    applyTranslations(lang);
-  }
-
+  // ─── INIT ─────────────────────────────────────────────────────────────────
+  // DOMContentLoaded ist sicher, weil dieses Script am Ende von <body> steht
+  // und zu dem Zeitpunkt das DOM bereits fertig ist – aber sicherheitshalber:
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', function () {
+      initDarkMode();
+      initLanguage();
+    });
   } else {
-    init();
+    // DOM ist schon bereit (Script nach dem DOM geladen)
+    initDarkMode();
+    initLanguage();
   }
 
-  /* Expose globally so inline handlers can call it */
-  window.switchLang = switchLang;
 })();
