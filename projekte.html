@@ -183,52 +183,59 @@
       <p data-i18n="projects.subtitle" class="text-center text-xl text-gray-600 dark:text-gray-400 mb-16">Überblick über meine Entwicklungs- und Forschungsprojekte.</p>
 
       <div class="reveal-stagger grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col">
-          <div class="flex justify-between items-start mb-4">
-            <h3 data-i18n="projects.dps_title" class="text-2xl font-bold text-primary">Fullstack Entwicklung bei DPS</h3>
-            <span class="inline-block px-4 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium" data-i18n="projects.ongoing">Laufend</span>
-          </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.dps_period">DPS Engineering GmbH • 04/2021 – heute</p>
-          <p class="mb-6" data-i18n="projects.dps_desc">Entwicklung von Backend (Spring Boot) und Frontend (React), Tests, Migrationen, CI/CD.</p>
-          <div class="mt-auto">
-            <p class="font-medium mb-2" data-i18n="projects.achievements">Erfolge:</p>
-            <ul class="list-disc pl-5 text-sm space-y-1 text-gray-700 dark:text-gray-300">
-              <li data-i18n="projects.dps_ach1">Automatisierte Tests mit Selenium</li>
-              <li data-i18n="projects.dps_ach2">Optimierung von Prozessen</li>
-              <li data-i18n="projects.dps_ach3">KI-Tools (Copilot, ChatGPT)</li>
-            </ul>
-          </div>
-        </div>
 
         <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col">
           <div class="flex justify-between items-start mb-4">
             <h3 data-i18n="projects.thesis_title" class="text-2xl font-bold text-primary">Bachelor-Thesis: Maschinelle Übersetzung</h3>
-            <span class="inline-block px-4 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium" data-i18n="projects.ongoing">Laufend</span>
+            <span class="inline-block px-4 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium" data-i18n="projects.completed">Abgeschlossen</span>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.thesis_period">HAW Hamburg • 2021 – 2026</p>
-          <p class="mb-6" data-i18n="projects.thesis_desc">Hybrider Ansatz für Übersetzung der Kobani-Variante des Kurmanji (Low-Resource NLP).</p>
+          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.thesis_period">
+            <a href="https://www.haw-hamburg.de/" target="_blank" rel="noopener" class="hover:text-primary transition">HAW Hamburg</a> • 2021 – 2026
+          </p>
+          <p class="mb-4" data-i18n="projects.thesis_desc">Hybrider Ansatz zur maschinellen Übersetzung für die Kobani-Variante des Kurmanji (Low-Resource NLP). Abschluss mit Fine-Tuning des NLLB-200-Modells – zwei öffentlich verfügbare Modelle auf HuggingFace.</p>
           <div class="mt-auto">
             <p class="font-medium mb-2" data-i18n="projects.achievements">Erfolge:</p>
             <ul class="list-disc pl-5 text-sm space-y-1 text-gray-700 dark:text-gray-300">
-              <li data-i18n="projects.thesis_ach1">Korpus-Aufbau</li>
-              <li data-i18n="projects.thesis_ach2">ML-Methoden</li>
+              <li data-i18n="projects.thesis_ach1">Korpus-Aufbau für Kobani-Kurmanji</li>
+              <li data-i18n="projects.thesis_ach2">Fine-Tuning NLLB-200 (kob_Latn ↔ eng)</li>
+              <li data-i18n="projects.thesis_ach3">2 veröffentlichte HuggingFace-Modelle</li>
             </ul>
+            <div class="flex flex-wrap gap-3 mt-4">
+              <a href="https://RamanAhmad.github.io/assets/Thesis_HAW_Raman_Ahmad_Final.pdf" target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                📄 Thesis (PDF)
+              </a>
+              <a href="https://huggingface.co/RamanAhmad/nllb-distilled-600m-kob_Latn-to-eng" target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                🤗 kob→eng
+              </a>
+              <a href="https://huggingface.co/RamanAhmad/nllb-distilled-600m-eng-to-kob_Latn" target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                🤗 eng→kob
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col">
           <div class="flex justify-between items-start mb-4">
-            <h3 data-i18n="projects.ickl_title" class="text-2xl font-bold text-primary">Dialect Mapping &amp; Kobani Analysis</h3>
+            <h3 data-i18n="projects.ickl_title" class="text-2xl font-bold text-primary">ICKL-6 &amp; ICKL-7 – Kurdische Dialektologie</h3>
             <span class="inline-block px-4 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium" data-i18n="projects.completed">Abgeschlossen</span>
           </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.ickl_period">Independent Research • 2023</p>
-          <p class="mb-6" data-i18n="projects.ickl_desc">Kartierung kurdischer Dialekte und Analyse des Kobani-Dialekts (präsentiert bei ICKL-6).</p>
+          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.ickl_period">
+            <a href="https://ickl-conference.org/" target="_blank" rel="noopener" class="hover:text-primary transition">ICKL-Konferenz</a> • 2023 &amp; Aug. 2025
+          </p>          <p class="mb-4" data-i18n="projects.ickl_desc">Forschungsbeiträge zur kurdischen Dialektologie auf zwei internationalen Konferenzen – zwei Poster bei ICKL-6 (2023) und eine Präsentation bei ICKL-7 (2025).</p>
           <div class="mt-auto">
-            <p class="font-medium mb-2" data-i18n="projects.achievements">Erfolge:</p>
+            <p class="font-medium mb-2" data-i18n="projects.achievements">Beiträge:</p>
             <ul class="list-disc pl-5 text-sm space-y-1 text-gray-700 dark:text-gray-300">
-              <li data-i18n="projects.ickl_ach1">Konferenz-Poster</li>
-              <li data-i18n="projects.ickl_ach2">Zusammenarbeit mit C. Schuler</li>
+              <li data-i18n="projects.ickl_ach1">ICKL-6 Poster: Analysis of Phonology and Morphology in the Kobani Dialect</li>
+              <li data-i18n="projects.ickl_ach2">ICKL-6 Poster: Towards a complete mapping of Kurdish Dialectology</li>
+              <li data-i18n="projects.ickl_ach3">ICKL-7 Präsentation: Dialectal Filtering – Synthesize text corpora for Kurdish varieties (2025)</li>
             </ul>
+            <a href="https://ickl-conference.org/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 mt-4 text-sm text-primary hover:underline">
+              ickl-conference.org
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
           </div>
         </div>
 
@@ -247,6 +254,28 @@
               <li data-i18n="projects.hack1_ach2">Teamarbeit &amp; kreative Ideenfindung</li>
               <li data-i18n="projects.hack1_ach3">Mentoring durch CHECK24-Expert:innen</li>
             </ul>
+          </div>
+        </div>
+
+        <!-- ── EXPO 2024 – base.camp Informatik-Messe ── -->
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 flex flex-col">
+          <div class="flex justify-between items-start mb-4">
+            <h3 data-i18n="projects.expo_title" class="text-2xl font-bold text-primary">base.camp EXPO 2024</h3>
+            <span class="inline-block px-4 py-1 bg-silver-100 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-full text-sm font-medium">🥈 2. Platz</span>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="projects.expo_period">Universität Hamburg · 2024</p>
+          <p class="mb-6" data-i18n="projects.expo_desc">Jährliche Informatik-Messe des base.camp während des Schnupperstudiums. Unser Forschungsprojekt <em>CRAMT</em> – ein Framework zur sprachübergreifenden Ressourcenaggregation für maschinelle Übersetzung in Low-Resource-Sprachen – überzeugte die Jury und gewann den zweiten Platz (200 €).</p>
+          <div class="mt-auto">
+            <p class="font-medium mb-2" data-i18n="projects.achievements">Erfolge:</p>
+            <ul class="list-disc pl-5 text-sm space-y-1 text-gray-700 dark:text-gray-300">
+              <li data-i18n="projects.expo_ach1">2. Platz &amp; 200 € Preisgeld</li>
+              <li data-i18n="projects.expo_ach2">Cross-Lingual NLP für Low-Resource-Sprachen</li>
+              <li data-i18n="projects.expo_ach3">Forschung mit Christian Schuler, Seid Muhie Yimam u. a.</li>
+            </ul>
+            <a href="https://www.inf.uni-hamburg.de/inst/basecamp/blog/24-03-27-expo2024.html" target="_blank" rel="noopener" class="inline-flex items-center gap-1 mt-4 text-sm text-primary hover:underline">
+              EXPO 2024 Blog
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
           </div>
         </div>
 
@@ -329,16 +358,18 @@
         'nav.home':'Startseite','nav.about':'Über mich','nav.research':'Forschung','nav.publications':'Publikationen','nav.projects':'Projekte','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Kontakt',
         'projects.title':'Aktuelle & abgeschlossene Projekte','projects.subtitle':'Überblick über meine Entwicklungs- und Forschungsprojekte.',
         'projects.ongoing':'Laufend','projects.completed':'Abgeschlossen','projects.achievements':'Erfolge:',
-        'projects.dps_title':'Fullstack Entwicklung bei DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – heute','projects.dps_desc':'Entwicklung von Backend (Spring Boot) und Frontend (React), Tests, Migrationen, CI/CD.',
-        'projects.dps_ach1':'Automatisierte Tests mit Selenium','projects.dps_ach2':'Optimierung von Prozessen','projects.dps_ach3':'KI-Tools (Copilot, ChatGPT)',
-        'projects.thesis_title':'Bachelor-Thesis: Maschinelle Übersetzung','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Hybrider Ansatz für Übersetzung der Kobani-Variante des Kurmanji (Low-Resource NLP).',
-        'projects.thesis_ach1':'Korpus-Aufbau','projects.thesis_ach2':'ML-Methoden',
-        'projects.ickl_title':'Dialect Mapping & Kobani Analysis','projects.ickl_period':'Independent Research • 2023','projects.ickl_desc':'Kartierung kurdischer Dialekte und Analyse des Kobani-Dialekts (präsentiert bei ICKL-6).',
-        'projects.ickl_ach1':'Konferenz-Poster','projects.ickl_ach2':'Zusammenarbeit mit C. Schuler',
+        'projects.dps_title':'Fullstack Entwicklung bei DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – heute','projects.dps_desc':'Fullstack-Entwicklung mit Spring Boot (Java) und React/TypeScript, Qualitätssicherung durch Tests und Code-Reviews sowie agile Zusammenarbeit in Scrum-Teams.',
+        'projects.dps_ach1':'RESTful APIs mit Spring Boot & React/TypeScript','projects.dps_ach2':'Unit-, Integrations- & E2E-Tests (JUnit, Selenium)','projects.dps_ach3':'CI/CD-Pipelines mit Jenkins & Docker','projects.dps_ach4':'DB-Migrationen mit Liquibase','projects.dps_ach5':'Tägliche Nutzung von GitHub Copilot & ChatGPT',
+        'projects.thesis_title':'Bachelor-Thesis: Maschinelle Übersetzung','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Hybrider Ansatz zur maschinellen Übersetzung für die Kobani-Variante des Kurmanji (Low-Resource NLP). Fine-Tuning des NLLB-200-Modells – zwei öffentliche HuggingFace-Modelle.',
+        'projects.thesis_ach1':'Korpus-Aufbau für Kobani-Kurmanji','projects.thesis_ach2':'Fine-Tuning NLLB-200 (kob_Latn ↔ eng)','projects.thesis_ach3':'2 veröffentlichte HuggingFace-Modelle',
+        'projects.ickl_title':'ICKL-6 & ICKL-7 – Kurdische Dialektologie','projects.ickl_period':'ICKL-Konferenz • 2023 & Aug. 2025','projects.ickl_desc':'Forschungsbeiträge zur kurdischen Dialektologie – zwei Poster bei ICKL-6 (2023) und eine Präsentation bei ICKL-7 (2025).',
+        'projects.ickl_ach1':'ICKL-6 Poster: Analysis of Phonology and Morphology in the Kobani Dialect','projects.ickl_ach2':'ICKL-6 Poster: Towards a complete mapping of Kurdish Dialectology','projects.ickl_ach3':'ICKL-7 Präsentation: Dialectal Filtering – Synthesize text corpora for Kurdish varieties (2025)',
         'projects.hack1_title':'Spring Hackathon mit CHECK24 💡','projects.hack1_period':'HAW Hamburg · 26. März 2024',
         'projects.hack1_desc':'Teambasierter Hackathon mit CHECK24 – kreatives Problemlösen unter Anleitung von Branchenexperten. Unser spontanes Projekt „Crazy Teaching" überzeugte die Jury und brachte uns den dritten Platz ein.',
         'projects.hack1_ach1':'3. Platz mit Projekt „Crazy Teaching"','projects.hack1_ach2':'Teamarbeit & kreative Ideenfindung','projects.hack1_ach3':'Mentoring durch CHECK24-Expert:innen',
-        'projects.hack2_title':'AI: Applied – CHECK24 × Hackathon HH','projects.hack2_period':'CHECK24 · Hamburg',
+        'projects.expo_title':'base.camp EXPO 2024','projects.expo_period':'Universität Hamburg · 2024',
+        'projects.expo_desc':'Jährliche Informatik-Messe des base.camp. Unser Projekt CRAMT – Framework zur sprachübergreifenden Ressourcenaggregation für maschinelle Übersetzung in Low-Resource-Sprachen – gewann den zweiten Platz.',
+        'projects.expo_ach1':'2. Platz & 200 € Preisgeld','projects.expo_ach2':'Cross-Lingual NLP für Low-Resource-Sprachen','projects.expo_ach3':'Forschung mit Christian Schuler, Seid Muhie Yimam u. a.',        'projects.hack2_title':'AI: Applied – CHECK24 × Hackathon HH','projects.hack2_period':'CHECK24 · Hamburg',
         'projects.hack2_desc':'Abendlanger KI-Hackathon für Informatik-Studierende: In Teamarbeit entstand ein funktionierender Prototyp. Unser Projekt „Reality Filter" – ein Fake-News- & Bias-Scanner – wurde als Firefox-Extension umgesetzt und analysiert X/Twitter-Posts auf Emotionalität, Manipulation und Einseitigkeit.',
         'projects.hack2_ach1':'Firefox-Extension „Reality Filter" entwickelt','projects.hack2_ach2':'LLM-gestützte Post-Analyse für X/Twitter','projects.hack2_ach3':'Erkennung von Bias, Manipulation & fehlenden Quellen',
         'footer.copyright':'© 2026 Raman Ahmad – Alle Rechte vorbehalten.',
@@ -347,15 +378,18 @@
         'nav.home':'Home','nav.about':'About Me','nav.research':'Research','nav.publications':'Publications','nav.projects':'Projects','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Contact',
         'projects.title':'Current & Completed Projects','projects.subtitle':'Overview of my development and research projects.',
         'projects.ongoing':'Ongoing','projects.completed':'Completed','projects.achievements':'Achievements:',
-        'projects.dps_title':'Fullstack Development at DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – present','projects.dps_desc':'Development of backend (Spring Boot) and frontend (React), testing, migrations, CI/CD.',
-        'projects.dps_ach1':'Automated tests with Selenium','projects.dps_ach2':'Process optimization','projects.dps_ach3':'AI tools (Copilot, ChatGPT)',
-        'projects.thesis_title':'Bachelor Thesis: Machine Translation','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Hybrid approach for translation of the Kobani variant of Kurmanji (Low-Resource NLP).',
-        'projects.thesis_ach1':'Corpus building','projects.thesis_ach2':'ML methods',
-        'projects.ickl_title':'Dialect Mapping & Kobani Analysis','projects.ickl_period':'Independent Research • 2023','projects.ickl_desc':'Mapping of Kurdish dialects and analysis of the Kobani dialect (presented at ICKL-6).',
-        'projects.ickl_ach1':'Conference posters','projects.ickl_ach2':'Collaboration with C. Schuler',
+        'projects.dps_title':'Fullstack Development at DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – present','projects.dps_desc':'Fullstack development with Spring Boot (Java) and React/TypeScript, quality assurance through testing and code reviews, agile collaboration in Scrum teams.',
+        'projects.dps_ach1':'RESTful APIs with Spring Boot & React/TypeScript','projects.dps_ach2':'Unit, integration & E2E tests (JUnit, Selenium)','projects.dps_ach3':'CI/CD pipelines with Jenkins & Docker','projects.dps_ach4':'DB migrations with Liquibase','projects.dps_ach5':'Daily use of GitHub Copilot & ChatGPT',
+        'projects.thesis_title':'Bachelor Thesis: Machine Translation','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Hybrid approach to machine translation for the Kobani variant of Kurmanji (low-resource NLP). Fine-tuned NLLB-200 – two public HuggingFace models.',
+        'projects.thesis_ach1':'Corpus building for Kobani Kurmanji','projects.thesis_ach2':'Fine-tuning NLLB-200 (kob_Latn ↔ eng)','projects.thesis_ach3':'2 published HuggingFace models',
+        'projects.ickl_title':'ICKL-6 & ICKL-7 – Kurdish Dialectology','projects.ickl_period':'ICKL Conference • 2023 & Aug. 2025','projects.ickl_desc':'Research contributions to Kurdish dialectology – two posters at ICKL-6 (2023) and a presentation at ICKL-7 (2025).',
+        'projects.ickl_ach1':'ICKL-6 Poster: Analysis of Phonology and Morphology in the Kobani Dialect','projects.ickl_ach2':'ICKL-6 Poster: Towards a complete mapping of Kurdish Dialectology','projects.ickl_ach3':'ICKL-7 Talk: Dialectal Filtering – Synthesize text corpora for Kurdish varieties (2025)',
         'projects.hack1_title':'Spring Hackathon with CHECK24 💡','projects.hack1_period':'HAW Hamburg · 26 March 2024',
         'projects.hack1_desc':'Team-based hackathon with CHECK24 – creative problem solving guided by industry experts. Our spontaneous project "Crazy Teaching" impressed the jury and earned us third place.',
         'projects.hack1_ach1':'3rd place with project "Crazy Teaching"','projects.hack1_ach2':'Teamwork & creative ideation','projects.hack1_ach3':'Mentoring by CHECK24 experts',
+        'projects.expo_title':'base.camp EXPO 2024','projects.expo_period':'University of Hamburg · 2024',
+        'projects.expo_desc':'Annual computer science fair by base.camp. Our project CRAMT – a framework for cross-lingual resource aggregation for low-resource machine translation – won second place.',
+        'projects.expo_ach1':'2nd place & €200 prize','projects.expo_ach2':'Cross-lingual NLP for low-resource languages','projects.expo_ach3':'Research with Christian Schuler, Seid Muhie Yimam et al.',
         'projects.hack2_title':'AI: Applied – CHECK24 × Hackathon HH','projects.hack2_period':'CHECK24 · Hamburg',
         'projects.hack2_desc':'An evening AI hackathon for computer science students: working as a team we built a functioning prototype in just a few hours. Our project "Reality Filter" – a fake-news & bias scanner – was released as a Firefox extension that analyses X/Twitter posts for emotionality, manipulation, and one-sidedness.',
         'projects.hack2_ach1':'Firefox extension "Reality Filter" built','projects.hack2_ach2':'LLM-powered post analysis for X/Twitter','projects.hack2_ach3':'Detection of bias, manipulation & missing sources',
@@ -365,15 +399,18 @@
         'nav.home':'Mal','nav.about':'Li ser min','nav.research':'Lêkolîn','nav.publications':'Weşan','nav.projects':'Proje','nav.interviews':'Hevpeyivîn','nav.cv':'CV','nav.contact':'Têkilî',
         'projects.title':'Projeyên Niha & Qediyayî','projects.subtitle':'Nêrîna giştî li ser projeyên pêşxistin û lêkolînê yên min.',
         'projects.ongoing':'Dewam dike','projects.completed':'Qediya','projects.achievements':'Destkeftî:',
-        'projects.dps_title':'Pêşxistina Fullstack li DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – îro','projects.dps_desc':'Pêşxistina backend (Spring Boot) û frontend (React), test, migrasyon, CI/CD.',
-        'projects.dps_ach1':'Testên otomatîk bi Selenium','projects.dps_ach2':'Optimîzasyona pêvajoyan','projects.dps_ach3':'Amûrên AI (Copilot, ChatGPT)',
-        'projects.thesis_title':'Teza Bachelor: Wergera Makîneyê','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Nêzîkbûna hîbrîd ji bo wergera guhertoya Kobanî ya Kurmanjî (NLP-ya kêm-sedayê).',
-        'projects.thesis_ach1':'Avakirina korpusê','projects.thesis_ach2':'Rêbazên ML',
-        'projects.ickl_title':'Nexşeya Dîalekt & Analîza Kobanî','projects.ickl_period':'Lêkolîna Serbixwe • 2023','projects.ickl_desc':'Nexşeya dîalektên Kurdî û analîza dîalektê Kobanî (pêşkêşkirin li ICKL-6).',
-        'projects.ickl_ach1':'Posterên konferansê','projects.ickl_ach2':'Hevkariya bi C. Schuler re',
+        'projects.dps_title':'Pêşxistina Fullstack li DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – îro','projects.dps_desc':'Pêşxistina Fullstack bi Spring Boot û React/TypeScript, garantiya kalîteyê bi test û nirxandinên kodê, hevkariya agile di tîmên Scrum de.',
+        'projects.dps_ach1':'API-yên RESTful bi Spring Boot & React/TypeScript','projects.dps_ach2':'Testên Unit, Entegrasyon & E2E (JUnit, Selenium)','projects.dps_ach3':'Pipeline-yên CI/CD bi Jenkins & Docker','projects.dps_ach4':'Migrasyonên DB bi Liquibase','projects.dps_ach5':'Karanîna rojane ya GitHub Copilot & ChatGPT',
+        'projects.thesis_title':'Teza Bachelor: Wergera Makîneyê','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'Nêzîkbûna hîbrîd ji bo wergera guhertoya Kobanî ya Kurmanjî. Fine-Tuning NLLB-200 – du modelên giştî yên HuggingFace.',
+        'projects.thesis_ach1':'Avakirina korpusê ji bo Kurmanjiya Kobanî','projects.thesis_ach2':'Fine-Tuning NLLB-200 (kob_Latn ↔ eng)','projects.thesis_ach3':'2 modelên weşandî yên HuggingFace',
+        'projects.ickl_title':'ICKL-6 & ICKL-7 – Diyalektolojiya Kurdî','projects.ickl_period':'Konferansa ICKL • 2023 & Tebax 2025','projects.ickl_desc':'Beşdariyên lêkolînê yên diyalektolojiya Kurdî – du poster li ICKL-6 û pêşkêşiyek li ICKL-7.',
+        'projects.ickl_ach1':'ICKL-6 Poster: Analîza Fonoloji û Morfolojî ya Dîalektê Kobanî','projects.ickl_ach2':'ICKL-6 Poster: Ber bi nexşeyek temam a Diyalektolojiya Kurdî','projects.ickl_ach3':'ICKL-7 Pêşkêşî: Dialectal Filtering – Corpus ji bo cure-cureyên Kurdî (2025)',
         'projects.hack1_title':'Spring Hackathon bi CHECK24 💡','projects.hack1_period':'HAW Hamburg · 26. Adar 2024',
         'projects.hack1_desc':'Hackathoneke tîmî bi CHECK24 re – çareserkirina pirsgirêkên afirîner bi rêberiya pisporên sektora pîşesaziyê. Projeya me ya spontane „Crazy Teaching" jûrî razî kir û me cihê sêyemîn girt.',
         'projects.hack1_ach1':'Cihê 3emîn bi projeya „Crazy Teaching"','projects.hack1_ach2':'Xebata tîmê & afirîneriya ramanê','projects.hack1_ach3':'Mentorîng ji pisporên CHECK24',
+        'projects.expo_title':'base.camp EXPO 2024','projects.expo_period':'Zanîngeha Hamburgê · 2024',
+        'projects.expo_desc':'Pêşangeha Informatikê ya salane ya base.camp. Projeya me CRAMT – çarçoveyek ji bo komkirina çavkaniyên ziman-berendam ji bo wergerandina makîneyê – cihê duyemîn girt.',
+        'projects.expo_ach1':'Cihê 2emîn & 200 € xelat','projects.expo_ach2':'NLP ya ziman-berendam ji bo zimanên kêm-çavkaniyan','projects.expo_ach3':'Lêkolîn bi Christian Schuler, Seid Muhie Yimam û din',
         'projects.hack2_title':'AI: Applied – CHECK24 × Hackathon HH','projects.hack2_period':'CHECK24 · Hamburg',
         'projects.hack2_desc':'Hackathona AI ya êvarê ji bo xwendekarên Informatikê: wekî tîm di saetên hindik de prototîpeke xebitandî avakirin. Projeya me „Reality Filter" – skanerek ji bo Nûçeyên Derewîn & Bias – wekî pêveka Firefox hate bicîhkirin û şîroveyên X/Twitter analîz dike.',
         'projects.hack2_ach1':'Pêveka Firefox „Reality Filter" hat çêkirin','projects.hack2_ach2':'Analîza şîroveyê ya LLM-based ji bo X/Twitter','projects.hack2_ach3':'Tespîtkirina bias, manîpulasyon & çavkaniyên winda',
@@ -383,15 +420,18 @@
         'nav.home':'ماڵ','nav.about':'دەربارەی من','nav.research':'توێژینەوە','nav.publications':'بڵاوکراوەکان','nav.projects':'پڕۆژەکان','nav.interviews':'چاوپێکەوتنەکان','nav.cv':'CV','nav.contact':'پەیوەندی',
         'projects.title':'پڕۆژەکانی ئێستا و تەواوکراوەکان','projects.subtitle':'چاوەڕوانی گشتی لە پڕۆژەکانی پەرەپێدان و توێژینەوەی من.',
         'projects.ongoing':'بەردەوام','projects.completed':'تەواوکراو','projects.achievements':'دەستکەوتەکان:',
-        'projects.dps_title':'پەرەپێدانی Fullstack لە DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – ئێستا','projects.dps_desc':'پەرەپێدانی backend (Spring Boot) و frontend (React)، تاقیکردنەوە، گواستنەوە، CI/CD.',
-        'projects.dps_ach1':'تاقیکردنەوەی ئۆتۆماتیکی بە Selenium','projects.dps_ach2':'باشترکردنی پرۆسەکان','projects.dps_ach3':'ئامرازەکانی AI (Copilot, ChatGPT)',
-        'projects.thesis_title':'تەزای بەکالۆریۆس: وەرگێڕانی ماشین','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'نزیکبوونەوەی هایبرید بۆ وەرگێڕانی جۆری کۆبانی کورمانجی (NLP کەم-سەرچاوە).',
-        'projects.thesis_ach1':'بنیاتنانی کۆرپوس','projects.thesis_ach2':'ڕێگاکانی ML',
-        'projects.ickl_title':'نەخشەی دیالێکت & لێکۆڵینەوەی کۆبانی','projects.ickl_period':'لێکۆڵینەوەی سەربەخۆ • 2023','projects.ickl_desc':'نەخشەی دیالێکتەکانی کوردی و لێکۆڵینەوەی دیالێکتی کۆبانی (پێشکەشکراو لە ICKL-6).',
-        'projects.ickl_ach1':'پوستەرەکانی کۆنفرانس','projects.ickl_ach2':'هاوکاری لەگەڵ C. Schuler',
+        'projects.dps_title':'پەرەپێدانی Fullstack لە DPS','projects.dps_period':'DPS Engineering GmbH • 04/2021 – ئێستا','projects.dps_desc':'پەرەپێدانی Fullstack بە Spring Boot و React/TypeScript، دڵنیاکردنەوەی کوالیتی لە ڕێگەی تاقیکردنەوە و کۆدریڤیوی ئاگایانە و هاوبەشکاری ئەجایل لە تیمەکانی Scrum.',
+        'projects.dps_ach1':'API-ی RESTful بە Spring Boot & React/TypeScript','projects.dps_ach2':'تاقیکردنەوەی Unit, Integration & E2E (JUnit, Selenium)','projects.dps_ach3':'Pipeline-ی CI/CD بە Jenkins & Docker','projects.dps_ach4':'گواستنەوەی DB بە Liquibase','projects.dps_ach5':'بەکارهێنانی ڕۆژانەی GitHub Copilot & ChatGPT',
+        'projects.thesis_title':'تەزای بەکالۆریۆس: وەرگێڕانی ماشین','projects.thesis_period':'HAW Hamburg • 2021 – 2026','projects.thesis_desc':'نزیکبوونەوەی هایبرید بۆ وەرگێڕانی جۆری کۆبانی کورمانجی. Fine-Tuning NLLB-200 – دوو مۆدێلی گشتی لە HuggingFace.',
+        'projects.thesis_ach1':'بنیاتنانی کۆرپوسی کورمانجی کۆبانی','projects.thesis_ach2':'Fine-Tuning NLLB-200 (kob_Latn ↔ eng)','projects.thesis_ach3':'٢ مۆدێلی بڵاوکراوە لە HuggingFace',
+        'projects.ickl_title':'ICKL-6 & ICKL-7 – دیالێکتزانیی کوردی','projects.ickl_period':'کۆنفرانسی ICKL • 2023 & ئاب 2025','projects.ickl_desc':'بەشدارییە توێژینەوەییەکان لە دیالێکتزانیی کوردی – دوو پوستەر لە ICKL-6 و پێشکەشکردن لە ICKL-7.',
+        'projects.ickl_ach1':'ICKL-6 پوستەر: شیکاری فۆنۆلۆجی و مۆرفۆلۆجی لە دیالێکتی کۆبانی','projects.ickl_ach2':'ICKL-6 پوستەر: بەرەو نەخشەی تەواوی دیالێکتزانیی کوردی','projects.ickl_ach3':'ICKL-7 پێشکەشکردن: Dialectal Filtering – کۆرپوس بۆ جۆرەکانی کوردی (2025)',
         'projects.hack1_title':'Spring Hackathon لەگەڵ CHECK24 💡','projects.hack1_period':'HAW Hamburg · ٢٦ی ئازار ٢٠٢٤',
         'projects.hack1_desc':'هاکاتۆنی تیمی لەگەڵ CHECK24 – چارەسەرکردنی دیاردەی دروستکارانە بە ڕێنمایی پسپۆڕانی پیشەسازی. پڕۆژەی بەشداری „Crazy Teaching" دادگا ڕازی کرد و شوێنی سێیەممان بۆ هێنا.',
         'projects.hack1_ach1':'شوێنی ٣ەم بە پڕۆژەی „Crazy Teaching"','projects.hack1_ach2':'کارکردنی تیمی & دروستکاری','projects.hack1_ach3':'مەنتۆرینگ لە پسپۆڕانی CHECK24',
+        'projects.expo_title':'base.camp EXPO 2024','projects.expo_period':'زانکۆی هامبورگ · ٢٠٢٤',
+        'projects.expo_desc':'ئێکسپۆی ساڵانەی ئینفۆرماتیکی base.camp. پڕۆژەی CRAMT – چوارچێوەیەک بۆ کۆکردنەوەی سەرچاوەی زمانی کراسی بۆ وەرگێڕانی ماشین – شوێنی دووەمی بردەوە.',
+        'projects.expo_ach1':'شوێنی ٢ەم & ٢٠٠ € خەڵات','projects.expo_ach2':'NLP کراس-زمانی بۆ زمانەکانی کەم-سەرچاوە','projects.expo_ach3':'توێژینەوە لەگەڵ Christian Schuler، Seid Muhie Yimam و تر',
         'projects.hack2_title':'AI: Applied – CHECK24 × Hackathon HH','projects.hack2_period':'CHECK24 · هامبورگ',
         'projects.hack2_desc':'هاکاتۆنی AI یەکەمالی بۆ خوێندکارانی ئینفۆرماتیک: بە تیم لە کەمێک کاتژمێر پڕۆتۆتایپێکی کارکردن دروستکرا. پڕۆژەی „Reality Filter" – سکانەرێک بۆ هەواڵی درۆ & Bias – وەک پێوەندەی Firefox جێبەجێکرا و پۆستەکانی X/Twitter شیکاری دەکات.',
         'projects.hack2_ach1':'پێوەندەی Firefox „Reality Filter" دروستکرا','projects.hack2_ach2':'شیکاری پۆستی LLM-based بۆ X/Twitter','projects.hack2_ach3':'دۆزینەوەی bias، مانیپولاسیۆن و سەرچاوەی نەبوون',
