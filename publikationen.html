@@ -180,9 +180,22 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 data-i18n="publications.title" class="text-5xl md:text-6xl font-bold text-center mb-8">Wissenschaftliche Publikationen</h1>
-      <p data-i18n="publications.subtitle" class="text-center text-xl text-gray-600 dark:text-gray-400 mb-16">Konferenz-Poster und wissenschaftliche Arbeiten.</p>
+      <p data-i18n="publications.subtitle" class="text-center text-xl text-gray-600 dark:text-gray-400 mb-16">Konferenz-Poster, Präsentationen und wissenschaftliche Arbeiten.</p>
 
       <div class="reveal-stagger space-y-12">
+
+        <!-- ICKL-7 Präsentation 2025 -->
+        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium" data-i18n="publications.talk">Conference Talk</span>
+            <span class="text-gray-500 dark:text-gray-400">2025</span>
+          </div>
+          <h3 data-i18n="publications.talk1_title" class="text-2xl font-bold mb-2">Dialectal Filtering: Synthesize Text Corpora for Kurdish Varieties by Enriching Datasets with Multi-Labels</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="publications.talk1_authors">Schuler, C., Ahmad, R., &amp; Wáng, Ā. • 7th International Conference on Kurdish Linguistics (ICKL-7) • 28–29 August 2025</p>
+          <p data-i18n="publications.talk1_desc">Präsentation eines Ansatzes zur Synthese von Textkorpora für kurdische Sprachvarietäten durch Anreicherung von Datensätzen mit Multi-Labels zur dialektalen Filterung.</p>
+        </div>
+
+        <!-- ICKL-6 Poster 1 -->
         <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
           <div class="flex items-center gap-3 mb-3">
             <span class="inline-block px-4 py-1 bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300 rounded-full text-sm font-medium" data-i18n="publications.poster">Conference Poster</span>
@@ -193,6 +206,7 @@
           <p data-i18n="publications.poster1_desc">Präsentation der phonologischen und morphologischen Analyse des Kobani-Dialekts zusammen mit Christian Schuler.</p>
         </div>
 
+        <!-- ICKL-6 Poster 2 -->
         <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
           <div class="flex items-center gap-3 mb-3">
             <span class="inline-block px-4 py-1 bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300 rounded-full text-sm font-medium" data-i18n="publications.poster">Conference Poster</span>
@@ -202,6 +216,7 @@
           <p class="text-gray-600 dark:text-gray-400 mb-4" data-i18n="publications.poster2_authors">Schuler, C., &amp; Ahmad, R. • 6th International Conference on Kurdish Linguistics (ICKL-6)</p>
           <p data-i18n="publications.poster2_desc">Interaktive Karte zur Visualisierung der kurdischen Dialektgeographie.</p>
         </div>
+
       </div>
     </div>
   </main>
@@ -261,7 +276,11 @@
     const translations = {
       de: {
         'nav.home':'Startseite','nav.about':'Über mich','nav.research':'Forschung','nav.publications':'Publikationen','nav.projects':'Projekte','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Kontakt',
-        'publications.title':'Wissenschaftliche Publikationen','publications.subtitle':'Konferenz-Poster und wissenschaftliche Arbeiten.',
+        'publications.title':'Wissenschaftliche Publikationen','publications.subtitle':'Konferenz-Poster, Präsentationen und wissenschaftliche Arbeiten.',
+        'publications.talk':'Conference Talk',
+        'publications.talk1_title':'Dialectal Filtering: Synthesize Text Corpora for Kurdish Varieties by Enriching Datasets with Multi-Labels',
+        'publications.talk1_authors':'Schuler, C., Ahmad, R., & Wáng, Ā. • 7th International Conference on Kurdish Linguistics (ICKL-7) • 28–29 August 2025',
+        'publications.talk1_desc':'Präsentation eines Ansatzes zur Synthese von Textkorpora für kurdische Sprachvarietäten durch Anreicherung von Datensätzen mit Multi-Labels zur dialektalen Filterung.',
         'publications.poster':'Conference Poster',
         'publications.poster1_title':'Analysis of Phonology and Morphology in the Kobani Dialect',
         'publications.poster1_authors':'Ahmad, R., & Schuler, C. • 6th International Conference on Kurdish Linguistics (ICKL-6)',
@@ -273,7 +292,11 @@
       },
       en: {
         'nav.home':'Home','nav.about':'About Me','nav.research':'Research','nav.publications':'Publications','nav.projects':'Projects','nav.interviews':'Interviews','nav.cv':'CV','nav.contact':'Contact',
-        'publications.title':'Scientific Publications','publications.subtitle':'Conference posters and academic works.',
+        'publications.title':'Scientific Publications','publications.subtitle':'Conference talks, posters and academic works.',
+        'publications.talk':'Conference Talk',
+        'publications.talk1_title':'Dialectal Filtering: Synthesize Text Corpora for Kurdish Varieties by Enriching Datasets with Multi-Labels',
+        'publications.talk1_authors':'Schuler, C., Ahmad, R., & Wáng, Ā. • 7th International Conference on Kurdish Linguistics (ICKL-7) • 28–29 August 2025',
+        'publications.talk1_desc':'Presentation of an approach for synthesizing text corpora for Kurdish language varieties by enriching datasets with multi-labels for dialectal filtering.',
         'publications.poster':'Conference Poster',
         'publications.poster1_title':'Analysis of Phonology and Morphology in the Kobani Dialect',
         'publications.poster1_authors':'Ahmad, R., & Schuler, C. • 6th International Conference on Kurdish Linguistics (ICKL-6)',
@@ -285,7 +308,11 @@
       },
       ku: {
         'nav.home':'Mal','nav.about':'Li ser min','nav.research':'Lêkolîn','nav.publications':'Weşan','nav.projects':'Projeler','nav.interviews':'Hevpeyivîn','nav.cv':'CV','nav.contact':'Têkilî',
-        'publications.title':'Weşanên Zanistî','publications.subtitle':'Posterên Konferansê û Karên Zanistî.',
+        'publications.title':'Weşanên Zanistî','publications.subtitle':'Danişînên Konferansê, Poster û Karên Zanistî.',
+        'publications.talk':'Danişîna Konferansê',
+        'publications.talk1_title':'Dialectal Filtering: Synthesize Text Corpora for Kurdish Varieties by Enriching Datasets with Multi-Labels',
+        'publications.talk1_authors':'Schuler, C., Ahmad, R., & Wáng, Ā. • Konferansa 7. Navneteweyî ya Zimannasiya Kurdî (ICKL-7) • 28–29 Tebax 2025',
+        'publications.talk1_desc':'Pêşkêşkirina nêzîkbûnek ji bo senteza korpusên nivîsê ji bo cure-cureyên zimanê Kurdî bi dewlemendkirina datasetên bi multi-labels ji bo fîltrekirina dîalektî.',
         'publications.poster':'Posterê Konferansê',
         'publications.poster1_title':'Analîza Fonolojî û Morfolojî di Dîalektê Kobanî de',
         'publications.poster1_authors':'Ahmad, R., & Schuler, C. • Konferansa 6. Navneteweyî ya Zimannasiya Kurdî (ICKL-6)',
@@ -297,7 +324,11 @@
       },
       ckb: {
         'nav.home':'ماڵ','nav.about':'دەربارەی من','nav.research':'توێژینەوە','nav.publications':'بڵاوکراوەکان','nav.projects':'پڕۆژەکان','nav.interviews':'چاوپێکەوتنەکان','nav.cv':'CV','nav.contact':'پەیوەندی',
-        'publications.title':'بڵاوکراوە زانستییەکان','publications.subtitle':'پوستەرەکانی کۆنفرانس و کارە زانستییەکان.',
+        'publications.title':'بڵاوکراوە زانستییەکان','publications.subtitle':'پێشکەشکردنەکانی کۆنفرانس، پوستەر و کارە زانستییەکان.',
+        'publications.talk':'پێشکەشکردنی کۆنفرانس',
+        'publications.talk1_title':'Dialectal Filtering: Synthesize Text Corpora for Kurdish Varieties by Enriching Datasets with Multi-Labels',
+        'publications.talk1_authors':'شولەر، س.، ئەحمەد، ر.، و Wáng، Ā. • کۆنفرانسی حەوتەمی نێودەوڵەتی زمانەوانی کوردی (ICKL-7) • ٢٨–٢٩ی ئاب ٢٠٢٥',
+        'publications.talk1_desc':'پێشکەشکردنی نزیکبوونەوەیەک بۆ دروستکردنی کۆرپوسی دەق بۆ جۆرەکانی زمانی کوردی لەڕێگەی دەوڵەمەندکردنی داتاسێتەکان بە multi-labels بۆ فیلتەرکردنی دیالێکتی.',
         'publications.poster':'پوستەری کۆنفرانس',
         'publications.poster1_title':'لێکۆڵینەوەی فۆنۆلۆژی و مۆرفۆلۆژی لە دیالێکتی کۆبانی',
         'publications.poster1_authors':'ئەحمەد، ر.، و شولەر، س. • کۆنفرانسی شەشەمی نێودەوڵەتی زمانەوانی کوردی (ICKL-6)',
