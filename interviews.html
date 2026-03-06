@@ -180,106 +180,76 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 data-i18n="interviews.title" class="text-5xl md:text-6xl font-bold text-center mb-8">Interviews &amp; öffentliche Auftritte</h1>
-      <p data-i18n="interviews.subtitle" class="text-center text-xl text-gray-600 dark:text-gray-400 mb-16">Wissenschaftskommunikation und Konferenzen.</p>
+      <p data-i18n="interviews.subtitle" class="text-center text-xl text-gray-600 dark:text-gray-400 mb-16">3 Video-Interviews auf Kurdisch – NLP, Linguistik &amp; Kultur</p>
 
-      <div class="reveal-stagger space-y-12">
+      <!-- 3-column grid -->
+      <div class="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-8">
 
         <!-- Interview 1: NLP & Low-Resource -->
-        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
-          <div class="flex flex-col md:flex-row md:items-start gap-6">
-            <div class="flex-shrink-0">
-              <a href="https://www.youtube.com/watch?v=9fcxWVhJM5Y&t=502s" target="_blank" rel="noopener"
-                 class="w-40 h-24 rounded-xl overflow-hidden hover:scale-105 transition-transform block relative group">
-                <img src="https://img.youtube.com/vi/9fcxWVhJM5Y/mqdefault.jpg" alt="NLP Interview Thumbnail" class="w-full h-full object-cover"/>
-                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition">
-                  <svg class="w-10 h-10 fill-white drop-shadow" viewBox="0 0 24 24"><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.276 1.105-1.08 1.97-2.186 2.246C18.72 20 12 20 12 20s-6.72 0-8.357-.252c-1.106-.276-1.91-1.141-2.186-2.246C2 15.72 2 12 2 12s0-3.72.457-5.502c.276-1.105 1.08-1.97 2.186-2.246C5.28 4 12 4 12 4s6.72 0 8.357.252c1.106.276 1.91 1.141 2.186 2.246zM10 15.5l6-3.5-6-3.5v7z"/></svg>
-                </div>
-              </a>
-            </div>
-            <div class="flex-grow">
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <span class="inline-block px-4 py-1 bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 rounded-full text-sm font-medium" data-i18n="interviews.tag_interview">Interview</span>
-                <span class="text-gray-600 dark:text-gray-400">🇹🇯 Kurdisch</span>
+        <div class="bg-white dark:bg-gray-800/70 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+          <!-- Thumbnail -->
+          <a href="https://www.youtube.com/watch?v=9fcxWVhJM5Y&t=502s" target="_blank" rel="noopener"
+             class="relative block overflow-hidden group aspect-video">
+            <img src="https://img.youtube.com/vi/9fcxWVhJM5Y/mqdefault.jpg" alt="NLP Interview Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <div class="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/10 transition">
+              <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6 fill-gray-900 ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
-              <h3 data-i18n="interviews.nlp_title" class="text-2xl font-bold mb-3">NLP & Low-Resource-Sprachen</h3>
-              <p class="mb-4" data-i18n="interviews.nlp_desc">Interview über meine Forschungsarbeit im Bereich Natural Language Processing mit besonderem Fokus auf Low-Resource-Sprachen wie Kurdisch – Methoden, Herausforderungen und Ziele.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">NLP</span>
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Low-Resource</span>
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Maschinelle Übersetzung</span>
-              </div>
-              <a href="https://www.youtube.com/watch?v=9fcxWVhJM5Y&t=502s" target="_blank" rel="noopener"
-                 class="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium">
-                <svg class="w-4 h-4 fill-current text-red-500" viewBox="0 0 24 24"><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.276 1.105-1.08 1.97-2.186 2.246C18.72 20 12 20 12 20s-6.72 0-8.357-.252c-1.106-.276-1.91-1.141-2.186-2.246C2 15.72 2 12 2 12s0-3.72.457-5.502c.276-1.105 1.08-1.97 2.186-2.246C5.28 4 12 4 12 4s6.72 0 8.357.252c1.106.276 1.91 1.141 2.186 2.246zM10 15.5l6-3.5-6-3.5v7z"/></svg>
-                Auf YouTube ansehen
-              </a>
             </div>
+          </a>
+          <!-- Content -->
+          <div class="p-4 flex flex-col flex-grow">
+            <span class="inline-block px-2.5 py-0.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full text-xs font-semibold mb-2 self-start">NLP &amp; Forschung</span>
+            <h3 data-i18n="interviews.nlp_title" class="text-base font-bold mb-1.5">NLP &amp; Low-Resource-Sprachen</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow" data-i18n="interviews.nlp_desc">Interview über meine Forschungsarbeit im Bereich Natural Language Processing – Methoden, Herausforderungen und Ziele.</p>
+            <a href="https://www.youtube.com/watch?v=9fcxWVhJM5Y&t=502s" target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 px-3 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-green-600 transition">
+              Auf YouTube ansehen ↗
+            </a>
           </div>
         </div>
 
         <!-- Interview 2: Buch Phonologie & Morphologie -->
-        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
-          <div class="flex flex-col md:flex-row md:items-start gap-6">
-            <div class="flex-shrink-0">
-              <a href="https://www.youtube.com/watch?v=yJsL5WiYOgw" target="_blank" rel="noopener"
-                 class="w-40 h-24 rounded-xl overflow-hidden hover:scale-105 transition-transform block relative group">
-                <img src="https://img.youtube.com/vi/yJsL5WiYOgw/mqdefault.jpg" alt="Buch Phonologie Thumbnail" class="w-full h-full object-cover"/>
-                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition">
-                  <svg class="w-10 h-10 fill-white drop-shadow" viewBox="0 0 24 24"><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.276 1.105-1.08 1.97-2.186 2.246C18.72 20 12 20 12 20s-6.72 0-8.357-.252c-1.106-.276-1.91-1.141-2.186-2.246C2 15.72 2 12 2 12s0-3.72.457-5.502c.276-1.105 1.08-1.97 2.186-2.246C5.28 4 12 4 12 4s6.72 0 8.357.252c1.106.276 1.91 1.141 2.186 2.246zM10 15.5l6-3.5-6-3.5v7z"/></svg>
-                </div>
-              </a>
-            </div>
-            <div class="flex-grow">
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <span class="inline-block px-4 py-1 bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 rounded-full text-sm font-medium" data-i18n="interviews.tag_interview">Interview</span>
-                <span class="text-gray-600 dark:text-gray-400">🇹🇯 Kurdisch</span>
+        <div class="bg-white dark:bg-gray-800/70 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+          <a href="https://www.youtube.com/watch?v=yJsL5WiYOgw" target="_blank" rel="noopener"
+             class="relative block overflow-hidden group aspect-video">
+            <img src="https://img.youtube.com/vi/yJsL5WiYOgw/mqdefault.jpg" alt="Buch Phonologie Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <div class="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/10 transition">
+              <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6 fill-gray-900 ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
-              <h3 data-i18n="interviews.book_title" class="text-2xl font-bold mb-3">„Die Analyse der Phonologie und Morphologie der Kobani-Variante"</h3>
-              <p class="mb-4" data-i18n="interviews.book_desc">Interview über mein Buch zur linguistischen Analyse der Kobani-Variante des Kurdischen – Phonologie, Morphologie und die Besonderheiten dieses Dialekts.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Phonologie</span>
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Morphologie</span>
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Kobani-Dialekt</span>
-              </div>
-              <a href="https://www.youtube.com/watch?v=yJsL5WiYOgw" target="_blank" rel="noopener"
-                 class="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium">
-                <svg class="w-4 h-4 fill-current text-red-500" viewBox="0 0 24 24"><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.276 1.105-1.08 1.97-2.186 2.246C18.72 20 12 20 12 20s-6.72 0-8.357-.252c-1.106-.276-1.91-1.141-2.186-2.246C2 15.72 2 12 2 12s0-3.72.457-5.502c.276-1.105 1.08-1.97 2.186-2.246C5.28 4 12 4 12 4s6.72 0 8.357.252c1.106.276 1.91 1.141 2.186 2.246zM10 15.5l6-3.5-6-3.5v7z"/></svg>
-                Auf YouTube ansehen
-              </a>
             </div>
+          </a>
+          <div class="p-4 flex flex-col flex-grow">
+            <span class="inline-block px-2.5 py-0.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded-full text-xs font-semibold mb-2 self-start">Linguistik</span>
+            <h3 data-i18n="interviews.book_title" class="text-base font-bold mb-1.5">Buch zur Kobani-Variante</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow" data-i18n="interviews.book_desc">Interview über meine Monographie zur linguistischen Analyse der Kobani-Variante – Phonologie, Morphologie und Besonderheiten.</p>
+            <a href="https://www.youtube.com/watch?v=yJsL5WiYOgw" target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 px-3 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-green-600 transition">
+              Auf YouTube ansehen ↗
+            </a>
           </div>
         </div>
 
         <!-- Interview 3: Kobani International Film Festival -->
-        <div class="bg-white dark:bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
-          <div class="flex flex-col md:flex-row md:items-start gap-6">
-            <div class="flex-shrink-0">
-              <a href="https://www.youtube.com/watch?v=e7EHyZHZpxc&t=78s" target="_blank" rel="noopener"
-                 class="w-40 h-24 rounded-xl overflow-hidden hover:scale-105 transition-transform block relative group">
-                <img src="https://img.youtube.com/vi/e7EHyZHZpxc/mqdefault.jpg" alt="Kobani Film Festival Thumbnail" class="w-full h-full object-cover"/>
-                <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition">
-                  <svg class="w-10 h-10 fill-white drop-shadow" viewBox="0 0 24 24"><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.276 1.105-1.08 1.97-2.186 2.246C18.72 20 12 20 12 20s-6.72 0-8.357-.252c-1.106-.276-1.91-1.141-2.186-2.246C2 15.72 2 12 2 12s0-3.72.457-5.502c.276-1.105 1.08-1.97 2.186-2.246C5.28 4 12 4 12 4s6.72 0 8.357.252c1.106.276 1.91 1.141 2.186 2.246zM10 15.5l6-3.5-6-3.5v7z"/></svg>
-                </div>
-              </a>
-            </div>
-            <div class="flex-grow">
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <span class="inline-block px-4 py-1 bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 rounded-full text-sm font-medium" data-i18n="interviews.tag_interview">Interview</span>
-                <span class="text-gray-600 dark:text-gray-400">🇹🇯 Kurdisch</span>
+        <div class="bg-white dark:bg-gray-800/70 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+          <a href="https://www.youtube.com/watch?v=e7EHyZHZpxc&t=78s" target="_blank" rel="noopener"
+             class="relative block overflow-hidden group aspect-video">
+            <img src="https://img.youtube.com/vi/e7EHyZHZpxc/mqdefault.jpg" alt="Kobani Film Festival Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+            <div class="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/10 transition">
+              <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6 fill-gray-900 ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
-              <h3 data-i18n="interviews.kiff_title" class="text-2xl font-bold mb-3">Kobani International Film Festival</h3>
-              <p class="mb-4" data-i18n="interviews.kiff_desc">Interview in meiner Rolle als Pressesprecher des Kobani International Film Festivals – über das Festival, seine Bedeutung für die kurdische Kultur und meine Aufgaben.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Pressesprecher</span>
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Kurdische Kultur</span>
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Film Festival</span>
-              </div>
-              <a href="https://www.youtube.com/watch?v=e7EHyZHZpxc&t=78s" target="_blank" rel="noopener"
-                 class="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium">
-                <svg class="w-4 h-4 fill-current text-red-500" viewBox="0 0 24 24"><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.276 1.105-1.08 1.97-2.186 2.246C18.72 20 12 20 12 20s-6.72 0-8.357-.252c-1.106-.276-1.91-1.141-2.186-2.246C2 15.72 2 12 2 12s0-3.72.457-5.502c.276-1.105 1.08-1.97 2.186-2.246C5.28 4 12 4 12 4s6.72 0 8.357.252c1.106.276 1.91 1.141 2.186 2.246zM10 15.5l6-3.5-6-3.5v7z"/></svg>
-                Auf YouTube ansehen
-              </a>
             </div>
+          </a>
+          <div class="p-4 flex flex-col flex-grow">
+            <span class="inline-block px-2.5 py-0.5 bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 rounded-full text-xs font-semibold mb-2 self-start">Kultur</span>
+            <h3 data-i18n="interviews.kiff_title" class="text-base font-bold mb-1.5">Kobani International Film Festival</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow" data-i18n="interviews.kiff_desc">Interview in meiner Rolle als <strong>Pressesprecher</strong> des Kobani International Film Festivals – Bedeutung für kurdische Kultur.</p>
+            <a href="https://www.youtube.com/watch?v=e7EHyZHZpxc&t=78s" target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 px-3 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-green-600 transition">
+              Auf YouTube ansehen ↗
+            </a>
           </div>
         </div>
 
